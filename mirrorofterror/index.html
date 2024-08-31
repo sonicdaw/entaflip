@@ -97,7 +97,7 @@
             <button onclick="switchLanguage('en')">English</button>
         </div>
 
-        <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror"></h1>
+        <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror" id="title-img"></h1>
 <!---
         <div class="animation-container">
             <svg id="player1" class="player" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -153,12 +153,15 @@
         function switchLanguage(lang) {
             const jaContent = document.getElementById('content-ja');
             const enContent = document.getElementById('content-en');
+            const titleImg = document.getElementById('title-img');
             if (lang === 'en') {
                 jaContent.classList.add('hidden');
                 enContent.classList.remove('hidden');
+                titleImg.src = 'MirrorOfTerror_Title_en.png';
             } else {
                 enContent.classList.add('hidden');
                 jaContent.classList.remove('hidden');
+                titleImg.src = 'MirrorOfTerror_Title.png';
             }
         }
 
