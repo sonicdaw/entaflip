@@ -93,12 +93,12 @@
 <body>
     <div class="container">
         <div class="lang-switch">
-            <button onclick="switchLanguage('en')">English</button>
             <button onclick="switchLanguage('ja')">日本語</button>
+            <button onclick="switchLanguage('en')">English</button>
         </div>
 
         <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror"></h1>
-
+<!---
         <div class="animation-container">
             <svg id="player1" class="player" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="30" r="20" stroke="black" stroke-width="2" fill="none"/>
@@ -121,7 +121,7 @@
                 <circle id="sweat2-2" class="sweat" cx="48" cy="18" r="2" fill="blue"/>
             </svg>
         </div>
-
+-->
         <div id="content-ja" class="content">
             <h2>「Mirror Of Terror に迷い込んだようですね」</h2>
             <p>二人で向き合って協力してください。ポーズをとる人になるか、まねする人になるかを決めましょう。</p>
@@ -166,19 +166,21 @@
             const timeline = gsap.timeline();
 
             // 同期動作
-            timeline.to(["#leftArm1", "#leftArm2"], {rotation: 30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"})
-                    .to(["#rightArm1", "#rightArm2"], {rotation: -30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
-                    .to(["#leftLeg1", "#leftLeg2"], {rotation: -10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
-                    .to(["#rightLeg1", "#rightLeg2"], {rotation: 10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
-                    .to(["#leftArm1", "#leftArm2", "#rightArm1", "#rightArm2", "#leftLeg1", "#leftLeg2", "#rightLeg1", "#rightLeg2"],
-                        {rotation: 0, duration: 0.5, ease: "power1.inOut"})
-                    .repeat(1);
+            for (let i = 0; i < 3; i++) {
+                timeline.to(["#leftArm1", "#leftArm2"], {rotation: 30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"})
+                        .to(["#rightArm1", "#rightArm2"], {rotation: -30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                        .to(["#leftLeg1", "#leftLeg2"], {rotation: -10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                        .to(["#rightLeg1", "#rightLeg2"], {rotation: 10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                        .to(["#leftArm1", "#leftArm2", "#rightArm1", "#rightArm2", "#leftLeg1", "#leftLeg2", "#rightLeg1", "#rightLeg2"],
+                            {rotation: 0, duration: 0.5, ease: "power1.inOut"})
+                        .repeat(1);
+            }
 
-            // Player 2が異なるポーズをとる
-            timeline.to("#leftArm2", {rotation: 90, transformOrigin: "top", duration: 0.3}, "different")
-                    .to("#rightArm2", {rotation: -90, transformOrigin: "top", duration: 0.3}, "different")
-                    .to("#leftLeg2", {rotation: 45, transformOrigin: "top", duration: 0.3}, "different")
-                    .to("#rightLeg2", {rotation: -45, transformOrigin: "top", duration: 0.3}, "different");
+            // Player が異なるポーズをとる
+            timeline.to("#leftArm1", {rotation: 90, transformOrigin: "top", duration: 1.3}, "different")
+                    .to("#rightArm1", {rotation: -90, transformOrigin: "top", duration: 1.3}, "different")
+                    .to("#leftLeg1", {rotation: 45, transformOrigin: "top", duration: 1.3}, "different")
+                    .to("#rightLeg1", {rotation: -45, transformOrigin: "top", duration: 1.3}, "different");
 
             // 両者が焦る動き
             timeline.to(["#player1", "#player2"], {y: "-=10", duration: 0.2, ease: "power1.out"}, "panic")
@@ -202,7 +204,7 @@
             });
         }
 
-        animatePlayers();
+//        animatePlayers();
     </script>
 </body>
 </html>
