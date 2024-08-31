@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror of Terror</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .animation-container {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .player {
+            position: absolute;
+            bottom: 0;
+        }
+        #player1 {
+            left: 30%;
+            width: 100px;
+            height: 200px;
+            z-index: 2;
+        }
+        #player2 {
+            right: 35%;
+            width: 60px;
+            height: 120px;
+            bottom: 80px;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .sweat {
+            opacity: 0;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('ja')">日本語</button>
+        </div>
+
+        <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror"></h1>
+
+        <div class="animation-container">
+            <svg id="player1" class="player" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="30" r="20" stroke="black" stroke-width="2" fill="none"/>
+                <line id="body1" x1="50" y1="50" x2="50" y2="120" stroke="black" stroke-width="2"/>
+                <line id="leftLeg1" x1="50" y1="120" x2="30" y2="180" stroke="black" stroke-width="2"/>
+                <line id="rightLeg1" x1="50" y1="120" x2="70" y2="180" stroke="black" stroke-width="2"/>
+                <line id="leftArm1" x1="50" y1="70" x2="20" y2="100" stroke="black" stroke-width="2"/>
+                <line id="rightArm1" x1="50" y1="70" x2="80" y2="100" stroke="black" stroke-width="2"/>
+                <circle id="sweat1-1" class="sweat" cx="65" cy="25" r="3" fill="blue"/>
+                <circle id="sweat2-1" class="sweat" cx="68" cy="28" r="2" fill="blue"/>
+            </svg>
+            <svg id="player2" class="player" viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="18" r="12" stroke="black" stroke-width="2" fill="none"/>
+                <line id="body2" x1="30" y1="30" x2="30" y2="72" stroke="black" stroke-width="2"/>
+                <line id="leftLeg2" x1="30" y1="72" x2="18" y2="108" stroke="black" stroke-width="2"/>
+                <line id="rightLeg2" x1="30" y1="72" x2="42" y2="108" stroke="black" stroke-width="2"/>
+                <line id="leftArm2" x1="30" y1="42" x2="12" y2="60" stroke="black" stroke-width="2"/>
+                <line id="rightArm2" x1="30" y1="42" x2="48" y2="60" stroke="black" stroke-width="2"/>
+                <circle id="sweat1-2" class="sweat" cx="45" cy="15" r="3" fill="blue"/>
+                <circle id="sweat2-2" class="sweat" cx="48" cy="18" r="2" fill="blue"/>
+            </svg>
+        </div>
+
+        <div id="content-ja" class="content">
+            <h2>「Mirror Of Terror に迷い込んだようですね」</h2>
+            <p>二人で向き合って協力してください。ポーズをとる人になるか、まねする人になるかを決めましょう。</p>
+            <h3>1. ポーズをとる人は 「鏡の前の人」へ</h3>
+            <p>ポーズしたり、相手のことを考えて動こう。ラジオ体操したり、エクササイズのトレーナーになったりするのもいいね。</p>
+            <h3>2. まねする人は 「鏡にうつっている人」へ</h3>
+            <p>ポーズ(同じ形)がずれないようにまねできたら、ポイントが入りつづけます！早く動けば、たくさんポイントが入るよ。</p>
+            <p>動きがずれると、きゃー、世界が恐怖のどんぞこへ（マイナスポイント）。</p>
+            <p>70秒間 鏡の世界を演じれば、Mirror Of Terror から抜け出せます。</p>
+        </div>
+
+        <div id="content-en" class="content hidden">
+            <h2>"It seems you've wandered into the Mirror Of Terror"</h2>
+            <p>Face each other and cooperate. Decide who will be the one striking poses and who will be the one mimicking.</p>
+            <h3>1. For the pose-striker, "The person in front of the mirror"</h3>
+            <p>Strike poses and move while considering your partner. You can do radio calisthenics or become an exercise trainer!</p>
+            <h3>2. For the mimic, "The person reflected in the mirror"</h3>
+            <p>Keep mimicking the pose (same form) without misalignment, and you'll continue to earn points! The faster you move, the more points you'll get.</p>
+            <p>If your movements misalign, eek! The world plunges into the depths of terror (minus points).</p>
+            <p>If you can act out the mirror world for 70 seconds, you'll escape from the Mirror Of Terror.</p>
+        </div>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LfxXyJEYg0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            if (lang === 'en') {
+                jaContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+            } else {
+                enContent.classList.add('hidden');
+                jaContent.classList.remove('hidden');
+            }
+        }
+
+        function animatePlayers() {
+            const timeline = gsap.timeline();
+
+            // 同期動作
+            timeline.to(["#leftArm1", "#leftArm2"], {rotation: 30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"})
+                    .to(["#rightArm1", "#rightArm2"], {rotation: -30, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                    .to(["#leftLeg1", "#leftLeg2"], {rotation: -10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                    .to(["#rightLeg1", "#rightLeg2"], {rotation: 10, transformOrigin: "top", duration: 0.5, ease: "power1.inOut"}, "<")
+                    .to(["#leftArm1", "#leftArm2", "#rightArm1", "#rightArm2", "#leftLeg1", "#leftLeg2", "#rightLeg1", "#rightLeg2"],
+                        {rotation: 0, duration: 0.5, ease: "power1.inOut"})
+                    .repeat(1);
+
+            // Player 2が異なるポーズをとる
+            timeline.to("#leftArm2", {rotation: 90, transformOrigin: "top", duration: 0.3}, "different")
+                    .to("#rightArm2", {rotation: -90, transformOrigin: "top", duration: 0.3}, "different")
+                    .to("#leftLeg2", {rotation: 45, transformOrigin: "top", duration: 0.3}, "different")
+                    .to("#rightLeg2", {rotation: -45, transformOrigin: "top", duration: 0.3}, "different");
+
+            // 両者が焦る動き
+            timeline.to(["#player1", "#player2"], {y: "-=10", duration: 0.2, ease: "power1.out"}, "panic")
+                    .to(["#player1", "#player2"], {y: "+=10", duration: 0.2, ease: "bounce.out"}, "panic+=0.2")
+                    .to(["#sweat1-1", "#sweat1-2"], {opacity: 1, y: "-=5", duration: 0.2, ease: "power1.out"}, "panic")
+                    .to(["#sweat2-1", "#sweat2-2"], {opacity: 1, y: "-=4", duration: 0.2, ease: "power1.out"}, "panic+=0.1")
+                    .to(["#sweat1-1", "#sweat1-2"], {opacity: 0, y: "+=5", duration: 0.2}, "panic+=0.4")
+                    .to(["#sweat2-1", "#sweat2-2"], {opacity: 0, y: "+=4", duration: 0.2}, "panic+=0.5")
+                    .to(["#leftArm1", "#rightArm1", "#leftArm2", "#rightArm2"], {rotation: 15, transformOrigin: "top", duration: 0.1, repeat: 3, yoyo: true}, "panic")
+                    .to(["#leftLeg1", "#rightLeg1", "#leftLeg2", "#rightLeg2"], {rotation: -5, transformOrigin: "top", duration: 0.1, repeat: 3, yoyo: true}, "panic");
+
+            // アニメーション終了後、プレイヤーを初期位置に戻す
+            timeline.to(["#player1", "#player2", "#leftArm1", "#rightArm1", "#leftArm2", "#rightArm2", "#leftLeg1", "#rightLeg1", "#leftLeg2", "#rightLeg2"],
+                        {rotation: 0, y: 0, duration: 0.5});
+
+            // タイムラインを無限にループ
+            gsap.ticker.add(() => {
+                if (timeline.progress() === 1) {
+                    timeline.restart();
+                }
+            });
+        }
+
+        animatePlayers();
+    </script>
+</body>
+</html>
