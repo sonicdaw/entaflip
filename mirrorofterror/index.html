@@ -35,35 +35,6 @@
             padding: 5px 10px;
             cursor: pointer;
         }
-        .animation-container {
-            width: 100%;
-            height: 300px;
-            background-color: #ddd;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .player {
-            position: absolute;
-            bottom: 0;
-        }
-        #player1 {
-            left: 30%;
-            width: 100px;
-            height: 200px;
-            z-index: 2;
-        }
-        #player2 {
-            right: 35%;
-            width: 60px;
-            height: 120px;
-            bottom: 80px;
-            opacity: 0.7;
-            z-index: 1;
-        }
-        .sweat {
-            opacity: 0;
-        }
         .content {
             background-color: white;
             padding: 20px;
@@ -94,13 +65,32 @@
             padding: 10px;
             margin-top: 20px;
         }
+        .top-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .top-link:hover {
+            text-decoration: underline;
+        }
+        .top-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .top-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lang-switch">
-            <button onclick="switchLanguage('ja')">日本語</button>
-            <button onclick="switchLanguage('en')">English</button>
+        <div class="header">
+            <a href="https://entaflip.com/" class="top-link">Entaflip</a>
+            <div class="lang-switch">
+                <span>日本語</span> |
+                <span>English</span>
+            </div>
         </div>
 
         <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror" id="title-img"></h1>
