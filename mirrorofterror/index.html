@@ -92,8 +92,10 @@
                 <button onclick="switchLanguage('en')">English</button>
             </div>
         </div>
-
         <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror" id="title-img"></h1>
+        <div id="news-ja" class="content">
+            <strong>9月26日〜29日 東京ゲームショウ 2024</strong><br>幕張メッセ ホール10 Selected Indie 80 Booth: A81
+        </div>
         <div id="content-ja" class="content">
             <h2>「Mirror Of Terror に迷い込んだようですね」</h2>
             <p>二人で向き合って協力してください。70秒間 鏡の世界の人になりきることで、鏡の呪縛から解放され、脱出できます。</p>
@@ -111,6 +113,9 @@
             <p>ポイントは「鏡の証明」になり、500点以上で脱出できます。</p>
         </div>
 
+        <div id="news-en" class="content hidden">
+            <strong>26-29 Sep Tokyo Game Show 2024</strong><br>Makuhari Messe Hall 10 Selected Indie 80 Booth: A81
+        </div>
         <div id="content-en" class="content hidden">
             <h2>"It seems you've wandered into the Mirror Of Terror"</h2>
             <p>Face each other and cooperate as a pair. By fully becoming the person in the mirror world for 70 seconds, you can break free from the mirror's spell and escape.</p>
@@ -130,6 +135,9 @@
 
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/LfxXyJEYg0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div><br>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -137,14 +145,20 @@
         function switchLanguage(lang) {
             const jaContent = document.getElementById('content-ja');
             const enContent = document.getElementById('content-en');
+            const jaNews = document.getElementById('news-ja');
+            const enNews = document.getElementById('news-en');
             const titleImg = document.getElementById('title-img');
             if (lang === 'en') {
                 jaContent.classList.add('hidden');
                 enContent.classList.remove('hidden');
+                jaNews.classList.add('hidden');
+                enNews.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title_en.png';
             } else {
                 enContent.classList.add('hidden');
                 jaContent.classList.remove('hidden');
+                enNews.classList.add('hidden');
+                jaNews.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title.png';
             }
         }
