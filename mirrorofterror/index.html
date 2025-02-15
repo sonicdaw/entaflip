@@ -175,6 +175,27 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaNews = document.getElementById('news-ja');
+            const enNews = document.getElementById('news-en');
+            const titleImg = document.getElementById('title-img');
+            if (lang === 'en') {
+                jaContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+                jaNews.classList.add('hidden');
+                enNews.classList.remove('hidden');
+                titleImg.src = 'MirrorOfTerror_Title_en.png';
+            } else {
+                enContent.classList.add('hidden');
+                jaContent.classList.remove('hidden');
+                enNews.classList.add('hidden');
+                jaNews.classList.remove('hidden');
+                titleImg.src = 'MirrorOfTerror_Title.png';
+            }
+        }
+    </script>
 </body>
 </html>
