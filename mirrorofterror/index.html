@@ -2,10 +2,16 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Mirror Of Terror</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <style>
+        html {
+            font-size: 16px;
+        }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -13,13 +19,32 @@
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
+            font-size: 16px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         h1 {
             text-align: center;
+            margin: 20px 0;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 25px;
         }
         img {
             max-width: 100%;
@@ -28,16 +53,24 @@
             margin: 0 auto;
         }
         .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
         }
         button {
-            padding: 5px 10px;
+            padding: 8px 16px;
             cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #555;
         }
         .content {
             background-color: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
@@ -47,10 +80,11 @@
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
+            margin-bottom: 15px;
         }
         .video-container iframe {
             position: absolute;
@@ -60,76 +94,429 @@
             height: 100%;
         }
         .terror-rules {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 0, 0, 0.05);
             border-left: 4px solid #ff0000;
-            padding: 10px;
+            padding: 15px;
             margin-top: 20px;
         }
-        .top-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .top-link:hover {
-            text-decoration: underline;
+        .terror-rules ul {
+            margin: 0;
+            padding-left: 20px;
         }
         .top-link {
             color: #666;
             text-decoration: none;
             font-size: 14px;
+            padding: 8px 16px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
         }
         .top-link:hover {
-            text-decoration: underline;
+            background-color: #d0d0d0;
+        }
+        .small-text {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.8;
+        }
+        .intro-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+        }
+        .intro-section h2 {
+            margin-top: 0;
+            color: #ff0000;
+            border-bottom: none;
+        }
+        .mode-description {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .mode-box {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .mode-box h3 {
+            margin-top: 0;
+            color: #ff0000;
+        }
+        .collapsible {
+            background-color: #f5f5f5;
+            color: #333;
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 0.95em;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .collapsible:hover {
+            background-color: #e0e0e0;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #333;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .collapsible.active:after {
+            content: "\2212";
+        }
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafafa;
+            border-radius: 0 0 5px 5px;
+        }
+        .collapse-content-inner {
+            padding: 15px;
+        }
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .cool-link {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .cool-link:hover {
+            background-color: #555;
+        }
+        
+        @media screen and (max-width: 768px) {
+            html {
+                font-size: 20px !important;
+            }
+            body {
+                padding: 15px;
+                font-size: 20px !important;
+                line-height: 1.8;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .content {
+                padding: 20px;
+                font-size: 20px !important;
+            }
+            .content p {
+                font-size: 20px !important;
+                line-height: 1.9;
+            }
+            .content li {
+                font-size: 20px !important;
+            }
+            .mode-description {
+                flex-direction: column;
+            }
+            .mode-box {
+                min-width: 100%;
+                font-size: 22px !important;
+                padding: 20px !important;
+            }
+            .mode-box h3 {
+                font-size: 28px !important;
+                margin-bottom: 12px !important;
+            }
+            .mode-box p {
+                font-size: 22px !important;
+                line-height: 1.7 !important;
+            }
+            .intro-section {
+                padding: 25px !important;
+                font-size: 22px !important;
+            }
+            .intro-section h2 {
+                font-size: 32px !important;
+                margin-bottom: 15px !important;
+            }
+            .intro-section p {
+                font-size: 22px !important;
+                line-height: 1.8 !important;
+            }
+            h2 {
+                font-size: 28px !important;
+            }
+            h3 {
+                font-size: 24px !important;
+            }
+            .small-text {
+                font-size: 18px !important;
+                line-height: 1.8;
+            }
+            .small-text a {
+                font-size: 18px !important;
+            }
+            .collapsible {
+                font-size: 20px !important;
+                padding: 18px;
+            }
+            .collapse-content-inner {
+                font-size: 18px !important;
+            }
+            button {
+                font-size: 18px !important;
+                padding: 14px 22px;
+            }
+            .top-link {
+                font-size: 18px !important;
+                padding: 12px 20px;
+            }
+            .terror-rules {
+                font-size: 18px !important;
+                padding: 18px;
+            }
+            .terror-rules li {
+                margin-bottom: 12px;
+                font-size: 20px !important;
+            }
+            .terror-rules ul {
+                font-size: 20px !important;
+            }
+            .cool-link {
+                font-size: 18px !important;
+                padding: 14px 24px;
+            }
+            a {
+                font-size: inherit !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <a href="https://entaflip.com/" class="top-link">Entaflip</a>
+            <a href="https://entaflip.com/" class="top-link">← Entaflip</a>
             <div class="lang-switch">
                 <button onclick="switchLanguage('ja')">日本語</button>
                 <button onclick="switchLanguage('en')">English</button>
             </div>
         </div>
+        
         <h1><img src="MirrorOfTerror_Title.png" alt="Mirror Of Terror" id="title-img"></h1>
-        <div id="news-ja" class="content">
-             1 Player mode (2025)<br>
-            <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-                2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025(六本木)</a> - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-                2025年7月30日〜8月1日 SPORTEC 2025 (ビックサイト) - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-                2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a><br>
-                Special Thanks<br>
-                <LI><a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)</LI>
-                <LI><a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)</LI>
-            </span><br><br>
-             2 Player mode (2024-)<br>
-            <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-               2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024
-            </span><br><br>
-             2 Player mode (2024-)<br>
-            <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-               2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024
-            </span><br><br>
-            <span class="small-text">
-               2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">プレイレポート(4Gamer)</a>
-            </span>
+
+        <!-- 日本語版イントロ -->
+        <div id="intro-ja" class="intro-section">
+            <div class="mode-description">
+                <div class="mode-box">
+                    <h3>1人プレイモード (2025)</h3>
+                    <p>1人でエクササイズやポージングに挑戦。画面に映るお手本の動きをシンクロさせて高得点を目指します。</p>
+                </div>
+                <div class="mode-box">
+                    <h3>2人プレイモード (2024-)</h3>
+                    <p>2人で対面して遊ぶモード。「鏡の前にいる人」と「鏡の中にいる人」に分かれて動きをシンクロさせます。</p>
+                </div>
+            </div>
         </div>
+
+        <!-- 英語版イントロ -->
+        <div id="intro-en" class="intro-section hidden">
+            <div class="mode-description">
+                <div class="mode-box">
+                    <h3>1 Player Mode (2025)</h3>
+                    <p>Challenge exercises and posing alone. Synchronize your movements with the on-screen model to achieve high scores.</p>
+                </div>
+                <div class="mode-box">
+                    <h3>2 Player Mode (2024-)</h3>
+                    <p>Face-to-face play mode for two players. Split into "Person in front of the mirror" and "Person inside the mirror" and synchronize your movements.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日本語版ニュース -->
+        <div id="news-ja" class="content">
+            <h2>News & Videos</h2>
+            
+            <h3>1 Player mode (2025)</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <button class="collapsible">出展履歴・Special Thanks</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025(六本木)</a> - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
+                        2025年7月30日〜8月1日 SPORTEC 2025 (ビックサイト) - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
+                        2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a><br><br>
+                        <strong>Special Thanks</strong><br>
+                        • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)<br>
+                        • <a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)
+                    </span>
+                </div>
+            </div>
+
+            <h3>2 Player mode (2024-)</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="small-text">
+                2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024
+            </span>
+
+            <button class="collapsible">その他のプレイ動画</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <span class="small-text">
+                        2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024
+                    </span><br><br>
+                    
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/LfxXyJEYg0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div><br>
+                    
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <span class="small-text">
+                        2024年9月11日配信 東京ゲームショウ2024 HELLO！ INDIE！～世界のインディーゲーム、TGSに大集合～ (35:26〜)
+                    </span>
+                </div>
+            </div>
+
+            <button class="collapsible">出展履歴</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        2024年9月26日〜9月29日 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a><br>
+                        2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
+                        2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
+                        2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit(京都みやこめっせ)</a> - Mirror Of Terror (2Player)
+                    </span>
+                </div>
+            </div>
+
+            <button class="collapsible">メディア掲載</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 英語版ニュース -->
+        <div id="news-en" class="content hidden">
+            <h2>News & Videos</h2>
+            
+            <h3>1 Player mode (2025)</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <button class="collapsible">Exhibition History & Special Thanks</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        29 May 2025 <a href="https://sh-oneday.com/" target="_blank">Sports Healthcare one day 2025(Roppongi)</a> - Exhibited SOLAR POLE synchronization mode at YAK-OH booth<br>
+                        30 July - 1 Aug 2025 SPORTEC 2025 (Big Sight) - Exhibited SOLAR POLE synchronization mode at YAK-OH booth<br>
+                        26-28 Nov 2025 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">TOKYO INTERNATIONAL INDUSTRY EXHIBITION (Big Sight)</a><br><br>
+                        <strong>Special Thanks</strong><br>
+                        • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)<br>
+                        • <a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)
+                    </span>
+                </div>
+            </div>
+
+            <h3>2 Player mode (2024-)</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="small-text">
+                29 Sep 2024 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024
+            </span>
+
+            <button class="collapsible">More Play Videos</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <span class="small-text">
+                        28 Sep 2024 Performed by Rasans (Japan) / Tokyo Game Show 2024
+                    </span><br><br>
+                    
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/LfxXyJEYg0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div><br>
+                    
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <span class="small-text">
+                        11 Sep 2024 Tokyo Game Show 2024 HELLO! INDIE! (35:26~)
+                    </span>
+                </div>
+            </div>
+
+            <button class="collapsible">Exhibition History</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        26-29 Sep 2024 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80</a><br>
+                        16-17 Nov 2024 <a href="https://gamemarket.jp/" target="_blank">Game Market 2024 Autumn</a> Makuhari Messe Hall 7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 Exhibition Area</a><br>
+                        16 Feb 2025 <a href="https://tokyogamedungeon.com/" target="_blank">Tokyo Game Dungeon 7</a> (Hamamatsucho) Table Mirror Of Terror debut<br>
+                        18-20 Jul 2025 <a href="https://bitsummit.org/" target="_blank">BitSummit (Kyoto Miyako Messe)</a> - Mirror Of Terror (2Player)
+                    </span>
+                </div>
+            </div>
+
+            <button class="collapsible">Media Coverage</button>
+            <div class="collapse-content">
+                <div class="collapse-content-inner">
+                    <span class="small-text">
+                        29 Sep 2024 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">Play Report (4Gamer)</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日本語版ルール説明 -->
         <div id="content-ja" class="content">
-            <h2>「Mirror Of Terror の世界に迷い込んだようですね」</h2>
+            <h2>How to Play (2 Player mode)</h2>
+            <h3>「Mirror Of Terror の世界に迷い込んだようですね」</h3>
             <p>かがみ の世界につかまった人をきずな力で助け出しましょう。</p>
-            <p>70秒間、現実世界にいるお手本の人になりきることで、かがみ の呪縛から解放され、脱出できます。なるべく高得点をとって、現実世界に戻ってこれるよう、がんばりましょう！</p>
+            <p>70秒間、現実世界にいるお手本の人になりきることで、かがみ の呪縛から解放され、脱出できます。なるべく高得点をとって、現実世界に戻ってこれるよう、がんばりましょう!</p>
+            
             <h3>まず、Aになるか、Bになるか、役割を決めよう</h3>
             <p>かがみ の中にいるBを助けるAになるか、かがみ につかまった人B になるか決めましょう。</p>
-            <h3>A. 「現実世界にいて助ける人」役です。 「鏡の前A」に立ってください。</h3>
+            
+            <h3>A. 「現実世界にいて助ける人」役です。「鏡の前A」に立ってください。</h3>
             <p>あなたはポーズのお手本をする人です。好きなポーズをしたり、楽しく踊ってもいいよ。ラジオ体操したり、エクササイズのトレーナーになったりするのもいいね。</p>
+            
             <h3>B. 「かがみ につかまった人」役です。「鏡の中B」に立ってください。</h3>
-            <p>あなたはポーズをまねする人です。ポーズ（同じ形）がずれないようにまねできたら、ポイントがどんどん入ります。</p>
+            <p>あなたはポーズをまねする人です。ポーズ(同じ形)がずれないようにまねできたら、ポイントがどんどん入ります。</p>
+            
             <h3>ゲームがはじまったら、B さんは、Aさんのまねをしよう。</h3>
             <p>ポイントは「かがみ の証明」になり、500点以上で脱出できます。</p>
+            
             <h3>もっと楽しく遊ぶために</h3>
             <div class="terror-rules">
                 <ul>
@@ -139,44 +526,26 @@
             </div>
         </div>
 
-        <div id="news-en" class="content hidden">
-            1 Player mode (2025)<br>
-            <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-               29 May 2025 <a href="https://sh-oneday.com/" target="_blank">Sports Healthcare one day 2025(Roppongi)</a> - Exhibited SOLAR POLE synchronization mode at YAK-OH booth<br>
-               30 July - 1 Aug 2025 SPORTEC 2025 (Big Sight) - Exhibited SOLAR POLE synchronization mode at YAK-OH booth<br>
-               26-28 Nov 2025 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">TOKYO INTERNATIONAL INDUSTRY EXHIBITION (Big Sight)</a><br>
-               Special Thanks<br>
-               <LI><a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)</LI>
-               <LI><a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)</LI>
-            </span><br><br>
-             2 Player mode (2024-)<br>
-            <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-               29 Sep 2024 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024
-            </span><br><br>
-             2 Player mode (2024-)<br>
-            <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-            <span class="small-text">
-               28 Sep 2024 Performed by Rasans (Japan) / Tokyo Game Show 2024
-            </span><br><br>
-            <span class="small-text">
-               9 Sep 2024 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">Play Report (4Gamer)</a>
-            </span>
-        </div>
+        <!-- 英語版ルール説明 -->
         <div id="content-en" class="content hidden">
-            <h2>"You've wandered into the World of the Mirror Of Terror"</h2>
+            <h2>How to Play (2 Player mode)</h2>
+            <h3>"You've wandered into the World of the Mirror Of Terror"</h3>
             <p>Let's use your love power to rescue people trapped in the "Mirror" world.</p>
             <p>By becoming the model person in the real world for 70 seconds, you can break free from the mirror's spell and escape. Let's do your best to score as high as possible and return to the real world!</p>
+            
             <h3>Now, Let's decide whether you'll be Person A or Person B</h3>
             <p>Decide whether you want to be the Person A helping B who is in the "Mirror", or the Person B trapped in the "Mirror".</p>
+            
             <h3>Role A:"Person in the real world who helps".Please stand at "In front of the Mirror A"</h3>
             <p>You can make any pose you like or dance happily!<br>
                 You can also become an excercise trainer!</p>
+            
             <h3>Role B:"Person trapped in the mirror".Please stand at "Inside the Mirror B"</h3>
             <p>Follow the poses. You'll earn more points if you can follow the posese(same form) without misalignment.</p>
+            
             <h3>The game begins. Person B, please follow Person A.</h3>
-            <p>Points will become "Proof of the Mirror”, and you can escape with 500 points or more.</p>
+            <p>Points will become "Proof of the Mirror", and you can escape with 500 points or more.</p>
+            
             <h3>And More</h3>
             <div class="terror-rules">
                 <ul>
@@ -186,37 +555,55 @@
             </div>
         </div>
 
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/LfxXyJEYg0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div><br>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="header">
+        <!-- Contact -->
+        <div class="content contact-section">
             <h2>Contact</h2>
-            お問い合わせ<br>
+            <p>お問い合わせ</p>
             <a href="https://forms.gle/4Ssz2SVV8GXCitFw7" class="cool-link" target="_blank">Form</a>
-        </dev>
+        </div>
 
     </div>
+
     <script>
+        // 折りたたみ機能
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+
+        // 言語切り替え
         function switchLanguage(lang) {
             const jaContent = document.getElementById('content-ja');
             const enContent = document.getElementById('content-en');
             const jaNews = document.getElementById('news-ja');
             const enNews = document.getElementById('news-en');
+            const jaIntro = document.getElementById('intro-ja');
+            const enIntro = document.getElementById('intro-en');
             const titleImg = document.getElementById('title-img');
+            
             if (lang === 'en') {
                 jaContent.classList.add('hidden');
                 enContent.classList.remove('hidden');
                 jaNews.classList.add('hidden');
                 enNews.classList.remove('hidden');
+                jaIntro.classList.add('hidden');
+                enIntro.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title_en.png';
             } else {
                 enContent.classList.add('hidden');
                 jaContent.classList.remove('hidden');
                 enNews.classList.add('hidden');
                 jaNews.classList.remove('hidden');
+                enIntro.classList.add('hidden');
+                jaIntro.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title.png';
             }
         }
