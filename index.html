@@ -8,6 +8,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
  }
  header {
     background-color: #333;
@@ -109,6 +110,54 @@
     margin-top: 5px;
     margin-bottom: 10px;
  }
+ 
+ /* 折りたたみセクション用のスタイル */
+ .collapsible {
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+ }
+ .collapsible:hover {
+    background-color: #e0e0e0;
+ }
+ .collapsible:after {
+    content: '\002B'; /* + マーク */
+    color: #333;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+ }
+ .collapsible.active:after {
+    content: "\2212"; /* - マーク */
+ }
+ .collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fafafa;
+    border-radius: 0 0 5px 5px;
+ }
+ .collapse-content-inner {
+    padding: 15px;
+    font-size: 0.85em;
+    line-height: 1.8;
+ }
+ .media-section {
+    margin-top: 15px;
+ }
+ .media-section iframe {
+    margin-bottom: 10px;
+ }
 </style>
 </head>
 <body>
@@ -120,6 +169,7 @@
  <p>「二人で向かい合う鏡ゲーム」<br>「エレベーターの気持ちになるゲーム」<br>
   「もしショパンがサブスク世代だったら」<br>など<br><br>新しいエンタの種を創造しています。
 </p></section>
+
 <div id="whats-new" class="section" style="background-color: #f0f0f0; padding: 20px; margin-bottom: 30px; border-radius: 10px;">
    <h2 style="color: #ff6600; margin-bottom: 15px;">What's New</h2>
    <ul style="list-style-type: none; padding-left: 0;">
@@ -135,67 +185,94 @@
 
 <section id="games">
  <h2>GAME</h2>
+
 <div class="game-section">
    <p class="game-description">モーションシンクロゲーム</p>
    <h3 class="game-title">鏡ゲーム (1Player Mirror Of Terror)<br>(2025年 Browser)</h3>
-   <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-     2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025(六本木)</a> - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-     2025年7月30日〜8月1日 SPORTEC 2025 (ビックサイト) - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-     2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a><br>
-     Special Thanks<br>
-     <LI><a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)</LI>
-     <LI><a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)</LI>
-   </span>
+   
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+
+   <button class="collapsible">出展履歴・Special Thanks</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025(六本木)</a> - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
+       2025年7月30日〜8月1日 SPORTEC 2025 (ビックサイト) - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
+       2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a><br><br>
+       <strong>Special Thanks</strong><br>
+       • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)<br>
+       • <a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)
+     </div>
+   </div>
 </div>
 
  <div class="game-section">
    <p class="game-description">現実空間モーションシンクロゲーム</p>
    <h3 class="game-title">Mirror Of Terror (2 Players)<br>(2024年 Browser)</h3>
-   <a href="./mirrorofterror" class="cool-link" target="_blank">How To Play</a><br>
-   <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-      2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024
-   </span><br><br>
-   <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-      2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024
-   </span><br><br>
-   <iframe  src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-    2024年9月11日配信 東京ゲームショウ2024 HELLO！ INDIE！～世界のインディーゲーム、TGSに大集合～ (35:26〜)
-   </span><br><br>
-    <span class="small-text">
-     2024年9月26日〜9月29日 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a><br>
-     2024年9月29日<a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a><br>
-     2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
-     2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
-     2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit(京都みやこめっせ)</a> - Mirror Of Terror (2Player)
-   </span><br><br>
+   <a href="./mirrorofterror" class="cool-link" target="_blank">How To Play</a>
+
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+     <span class="small-text">2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024</span>
+   </div>
+
+   <button class="collapsible">その他のプレイ動画</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner media-section">
+       <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+       <span class="small-text">2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024</span><br><br>
+       
+       <iframe src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+       <span class="small-text">2024年9月11日配信 東京ゲームショウ2024 HELLO！ INDIE！～世界のインディーゲーム、TGSに大集合～ (35:26〜)</span>
+     </div>
+   </div>
+
+   <button class="collapsible">出展履歴・メディア掲載</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2024年9月26日〜9月29日 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a><br>
+       2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a><br>
+       2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
+       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
+       2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit(京都みやこめっせ)</a> - Mirror Of Terror (2Player)
+     </div>
+   </div>
 </div>
 
  <div class="game-section">
     <p class="game-description">鏡の中の人になるアクションゲーム</p>  
     <h3 class="game-title">MIRROR MAN<br>(1987年 PC-8001)</h3>
-    <iframe src="https://www.youtube.com/embed/ZKhKRjIBst0?si=65xl1VlwsZFb_rAO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <span class="small-text">
-      「PC-8801・PC-8001プログラム大全集」掲載 , 電波新聞社 (1987年)<br>
-      2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
-   </span>
+    
+    <div class="media-section">
+      <iframe src="https://www.youtube.com/embed/ZKhKRjIBst0?si=65xl1VlwsZFb_rAO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <button class="collapsible">掲載・出展履歴</button>
+    <div class="collapse-content">
+      <div class="collapse-content-inner">
+        「PC-8801・PC-8001プログラム大全集」掲載 , 電波新聞社 (1987年)<br>
+        2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
+      </div>
+    </div>
  </div>
 
  <div class="game-section">
    <p class="game-description">かるたのあとのことばづけ</p>
    <h3 class="game-title">ことばづけかるた<br>(2021年)</h3>
    <a href="https://entaflip.com/kotobadukekaruta/Kotobadukekaruta.pdf" class="cool-link" target="_blank">ルール説明</a>
-   <a href="https://entaflip.com/kotobadukekaruta/" class="cool-link" target="_blank">デジタル版プレイ</a><br>
-   <span class="small-text">
-      2021年10月07日 登録商標「ことばづけかるた」（商標登録第6453218号）<br>
-      2023年12月9日 ゲームマーケット2023秋 出展 ( <a href="https://note.com/sonicdaw/n/n3ae731cb6ef9" target="_blank">note</a> )<br>
-      2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
-      2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
-      2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 完全 AI 制作のデジタルことばづけかるた 初出展
-   </span>
+   <a href="https://entaflip.com/kotobadukekaruta/" class="cool-link" target="_blank">デジタル版プレイ</a>
+
+   <button class="collapsible">商標登録・出展履歴</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2021年10月07日 登録商標「ことばづけかるた」（商標登録第6453218号）<br>
+       2023年12月9日 ゲームマーケット2023秋 出展 ( <a href="https://note.com/sonicdaw/n/n3ae731cb6ef9" target="_blank">note</a> )<br>
+       2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
+       2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
+       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 完全 AI 制作のデジタルことばづけかるた 初出展
+     </div>
+   </div>
 </div>
 
  <div class="game-section">
@@ -203,88 +280,125 @@
    <h3 class="game-title">Elebeater<br>(2014年〜 Browser)</h3>
    <a href="https://elebeater.net" class="cool-link" target="_blank">Play</a>
    <a href="https://note.com/sonicdaw/m/m23c1ef33b421" class="cool-link" target="_blank">note</a>
-   <br>
-   <iframe src="https://www.youtube.com/embed/5ahmorvdtUo?si=gaJkQIYSHwgBSXZe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-    紹介動画
-   </span><br><br>
-   <iframe src="https://www.youtube.com/embed/i3T24womY1Q?si=6aIHb4oSE8mbXQQZ&start=50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-    講談社 Amazing Indie Games
-   </span><br><br>
-   <iframe  src="https://www.youtube.com/embed/1awaW6KAUwE?si=dwBqZIolBdLvIOEP&start=5893" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-    東京ゲームショウ2022 インディーゲーム 特別番組 (1:38:18〜)
-   </span><br><br>
-   <span class="small-text">
-      2022年1月31日 登録商標「Ｅｌｅｂｅａｔｅｒ」（商標登録第6506550号）<br>
-      2022年9月15日〜9月18日 TOKYO GAME SHOW 2022 Indie Game 出展 ( <a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a> / <a href="https://youtu.be/1awaW6KAUwE?t=5893" target="_blank">IndieGameTokyo2022</a> )<br>
-      2024年5月4日 東京ゲームダンジョン5 出展<br>
-      2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
-      2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
-      2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
-   </span>
+
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/5ahmorvdtUo?si=gaJkQIYSHwgBSXZe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+
+   <button class="collapsible">その他の動画</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner media-section">
+       <iframe src="https://www.youtube.com/embed/i3T24womY1Q?si=6aIHb4oSE8mbXQQZ&start=50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+       <span class="small-text">講談社 Amazing Indie Games</span><br><br>
+       
+       <iframe src="https://www.youtube.com/embed/1awaW6KAUwE?si=dwBqZIolBdLvIOEP&start=5893" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+       <span class="small-text">東京ゲームショウ2022 インディーゲーム 特別番組 (1:38:18〜)</span>
+     </div>
+   </div>
+
+   <button class="collapsible">商標登録・出展履歴</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2022年1月31日 登録商標「Ｅｌｅｂｅａｔｅｒ」（商標登録第6506550号）<br>
+       2022年9月15日〜9月18日 TOKYO GAME SHOW 2022 Indie Game 出展 ( <a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a> / <a href="https://youtu.be/1awaW6KAUwE?t=5893" target="_blank">IndieGameTokyo2022</a> )<br>
+       2024年5月4日 東京ゲームダンジョン5 出展<br>
+       2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
+       2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
+       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
+     </div>
+   </div>
 </div>
 
 <div class="game-section">
    <p class="game-description">オリジナルのアイテム・オプション形式のレトロシューティングゲーム(リメイク)</p>
    <h3 class="game-title">LANDNAX 202x</h3>
-   <iframe src="https://www.youtube.com/embed/-HKfh2Qt8r0?si=hopuoZFbSPtvhJyj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-   <span class="small-text">
-     タイトル (2025年2月16時点)
-   </span><br><br>
-   <iframe src="https://www.youtube.com/embed/lmhKACx8fOo?si=Y_lfkamiRTxjnMf-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-   <span class="small-text">
-     プレイ動画 (2025年2月16時点)
-    </span><br><br>
-   <span class="small-text">
-     2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) LANDNAX 202x 初出展<br>
-     2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町)
-   </span>
+
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/-HKfh2Qt8r0?si=hopuoZFbSPtvhJyj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+     <span class="small-text">タイトル (2025年2月16時点)</span>
+   </div>
+
+   <button class="collapsible">その他の動画</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner media-section">
+       <iframe src="https://www.youtube.com/embed/lmhKACx8fOo?si=Y_lfkamiRTxjnMf-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+       <span class="small-text">プレイ動画 (2025年2月16時点)</span>
+     </div>
+   </div>
+
+   <button class="collapsible">出展履歴</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) LANDNAX 202x 初出展<br>
+       2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町)
+     </div>
+   </div>
 </div>
 
  <div class="game-section">
     <p class="game-description">オリジナルのアイテム・オプション形式のレトロシューティングゲーム</p>
     <h3 class="game-title">LANDNAX<br>(1989年 PC-8001)</h3>
-    <iframe src="https://www.youtube.com/embed/IIro12bhd-s?si=-LDVQX-J-SR-DTuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <span class="small-text">
-      紹介動画
-    </span><br><br>
-    <iframe src="https://www.youtube.com/embed/fJpI2ttEX8g?si=jKcF-BPC_gWm6PuQ&start=2044" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-    <span class="small-text">
-      qbertgamesJPチャンネル で紹介していただきました。(34:04〜)
-     </span><br><br>
-     <iframe src="https://www.youtube.com/embed/hawgBlmQ_kY?si=WdCgYTo-fU3blQJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-     <span class="small-text">
-       2024年3月30日のPC-8001mk2(レトロパソコン)の会のプレイ実況動画
-     </span><br><br>
-    <span class="small-text">
-      「月刊マイコン」掲載 , 電波新聞社 (1989年4月号)<br>
-      2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )<br>
-      2024年3月30日 80mk2会出展(クローズドイベント) - レトロゲームサミットで見つけてくださった @yoneさんによる出展 ( <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a> )<br>
-      2024年5月4日 東京ゲームダンジョン5 出展 (浜松町)<br>
-      2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町)</a>
-    </span>
+
+    <div class="media-section">
+      <iframe src="https://www.youtube.com/embed/IIro12bhd-s?si=-LDVQX-J-SR-DTuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <button class="collapsible">その他の動画</button>
+    <div class="collapse-content">
+      <div class="collapse-content-inner media-section">
+        <iframe src="https://www.youtube.com/embed/fJpI2ttEX8g?si=jKcF-BPC_gWm6PuQ&start=2044" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <span class="small-text">qbertgamesJPチャンネル で紹介していただきました。(34:04〜)</span><br><br>
+        
+        <iframe src="https://www.youtube.com/embed/hawgBlmQ_kY?si=WdCgYTo-fU3blQJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <span class="small-text">2024年3月30日のPC-8001mk2(レトロパソコン)の会のプレイ実況動画</span>
+      </div>
+    </div>
+
+    <button class="collapsible">掲載・出展履歴</button>
+    <div class="collapse-content">
+      <div class="collapse-content-inner">
+        「月刊マイコン」掲載 , 電波新聞社 (1989年4月号)<br>
+        2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )<br>
+        2024年3月30日 80mk2会出展(クローズドイベント) - レトロゲームサミットで見つけてくださった @yoneさんによる出展 ( <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a> )<br>
+        2024年5月4日 東京ゲームダンジョン5 出展 (浜松町)<br>
+        2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町)
+      </div>
+    </div>
  </div>
 
  <div class="game-section">
    <p class="game-description">バグに触って離れて駆除するシステム復旧パズル</p>
    <h3 class="game-title">TOUCH BREAKER<br>(2024年 Browser)</h3>
-    <iframe src="https://www.youtube.com/embed/y1i9YrjP3UA?si=YBj-A5bGL32cOKiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <a href="https://entaflip.com/touchbreaker2/" class="cool-link" target="_blank">Play(Browser)</a><br>
-    <span class="small-text">
-      2024年8月21日 Tokyo Indies 出展<br>
-      2025年2月16日(日) <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
-   </span><br><br>
-    <p class="game-description">ブロックに触って離れて壊す能力パズル</p>
-    <h3 class="game-title">TOUCH BREAKER<br>(1988年 MSX)</h3>
-    <iframe src="https://www.youtube.com/embed/1d1J4zmNsGM?si=PXkd-N94_a3_LhMu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <a href="https://webmsx.org/?MACHINE=MSX1J&DISK=https://entaflip.com/msx/touchbreaker.dsk" class="cool-link" target="_blank">Play(PC)</a>
-    <a href="https://github.com/sonicdaw/touchbreaker" class="cool-link" target="_blank">GitHub</a><br>
-    <span class="small-text">
-      「マイコンBASIC Magazine」掲載 , 電波新聞社 (1988年12月号)<br>
-      2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
-   </span>
+   
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/y1i9YrjP3UA?si=YBj-A5bGL32cOKiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+   <a href="https://entaflip.com/touchbreaker2/" class="cool-link" target="_blank">Play(Browser)</a>
+
+   <button class="collapsible">出展履歴</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       2024年8月21日 Tokyo Indies 出展<br>
+       2025年2月16日(日) <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
+     </div>
+   </div>
+
+   <p class="game-description" style="margin-top: 30px;">ブロックに触って離れて壊す能力パズル</p>
+   <h3 class="game-title">TOUCH BREAKER<br>(1988年 MSX)</h3>
+   
+   <div class="media-section">
+     <iframe src="https://www.youtube.com/embed/1d1J4zmNsGM?si=PXkd-N94_a3_LhMu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+   <a href="https://webmsx.org/?MACHINE=MSX1J&DISK=https://entaflip.com/msx/touchbreaker.dsk" class="cool-link" target="_blank">Play(PC)</a>
+   <a href="https://github.com/sonicdaw/touchbreaker" class="cool-link" target="_blank">GitHub</a>
+
+   <button class="collapsible">掲載・出展履歴</button>
+   <div class="collapse-content">
+     <div class="collapse-content-inner">
+       「マイコンBASIC Magazine」掲載 , 電波新聞社 (1988年12月号)<br>
+       2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
+     </div>
+   </div>
  </div>
 </section>
 
@@ -316,5 +430,24 @@
 <footer>
  <p>Copyright (C) 2024, 2025 Entaflip.com. All Rights Reserved.</p>
 </footer>
+
+<script>
+// 折りたたみ機能のJavaScript
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 </body>
 </html>
