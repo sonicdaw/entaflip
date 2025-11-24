@@ -210,13 +210,18 @@
             }
             body {
                 padding: 15px;
+                padding-top: 15px;
                 font-size: 20px !important;
                 line-height: 1.8;
             }
             .header {
-                flex-direction: column;
-                align-items: flex-start;
+                display: flex !important;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 gap: 10px;
+                margin-bottom: 15px;
+                width: 100%;
             }
             .content {
                 padding: 20px;
@@ -309,7 +314,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="https://entaflip.com/" class="top-link">← Entaflip</a>
+            <a href="https://entaflip.com/" class="top-link" id="top-link">ENTAFLIPのトップページ</a>
             <div class="lang-switch">
                 <button onclick="switchLanguage('ja')">日本語</button>
                 <button onclick="switchLanguage('en')">English</button>
@@ -588,6 +593,7 @@
             const jaIntro = document.getElementById('intro-ja');
             const enIntro = document.getElementById('intro-en');
             const titleImg = document.getElementById('title-img');
+            const topLink = document.getElementById('top-link');
             
             if (lang === 'en') {
                 jaContent.classList.add('hidden');
@@ -597,6 +603,7 @@
                 jaIntro.classList.add('hidden');
                 enIntro.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title_en.png';
+                topLink.textContent = 'ENTAFLIP Top Page';
             } else {
                 enContent.classList.add('hidden');
                 jaContent.classList.remove('hidden');
@@ -605,6 +612,7 @@
                 enIntro.classList.add('hidden');
                 jaIntro.classList.remove('hidden');
                 titleImg.src = 'MirrorOfTerror_Title.png';
+                topLink.textContent = 'ENTAFLIPのトップページ';
             }
         }
     </script>
