@@ -158,6 +158,70 @@
  .media-section iframe {
     margin-bottom: 10px;
  }
+ .wn-item {
+    display: grid;
+    grid-template-columns: 11em 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    padding: 8px 0;
+    font-size: 0.88em;
+ }
+ .wn-item + .wn-item {
+    border-top: 1px solid #ddd;
+ }
+ .wn-date {
+    grid-row: 1;
+    grid-column: 1;
+    color: #555;
+    white-space: nowrap;
+    padding-top: 1px;
+ }
+ .wn-title {
+    grid-row: 1;
+    grid-column: 2;
+    color: #222;
+    font-weight: bold;
+ }
+ .wn-note {
+    grid-row: 2;
+    grid-column: 2;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 2px;
+ }
+ .wn-x {
+    display: inline-block;
+    background-color: #555;
+    color: white !important;
+    font-size: 0.75em;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-weight: normal;
+ }
+ .wn-x:hover {
+    background-color: #333;
+ }
+ @media screen and (max-width: 600px) {
+    .wn-item {
+       grid-template-columns: 1fr;
+    }
+    .wn-date {
+       grid-column: 1;
+       color: #888;
+       font-size: 0.9em;
+    }
+    .wn-title {
+       grid-row: 2;
+       grid-column: 1;
+    }
+    .wn-note {
+       grid-row: 3;
+       grid-column: 1;
+    }
+ }
 </style>
 </head>
 <body>
@@ -171,16 +235,73 @@
 </p></section>
 
 <div id="whats-new" class="section" style="background-color: #f0f0f0; padding: 20px; margin-bottom: 30px; border-radius: 10px;">
-   <h2 style="color: #ff6600; margin-bottom: 15px;">What's New</h2>
-   <ul style="list-style-type: none; padding-left: 0;">
-     <li style="margin-bottom: 10px;">
-      <strong>2025年5月29日 </strong><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a> - Mirror Of Terror (1Player excercise)<br>
-      <strong>2025年7月18〜20日 </strong><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a> - Mirror Of Terror (2Player)<br>
-      <strong>2025年7月30日〜8月1日 </strong> SPORTEC 2025 (ビックサイト) - Mirror Of Terror (1Player excercise)<br>
-      <strong>2025年8月30日 </strong><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">「ものづくりと最新技術体験ワークショップ in もてぎ」</a> - Mirror Of Terror (2Player)<br>
-      <strong>2025年11月9日 </strong><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a> - LANDNAX 1989 ＆ 202x<br>
-      <strong>2025年11月26日〜28日 </strong><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a> - Mirror Of Terror (1Player modes)<br>
-      <strong>2026年1月8日〜10日 </strong><a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a> - Mirror Of Terror (1Player)
+   <h2 style="color: #ff6600; margin-bottom: 16px;">What's New</h2>
+   <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+     <li class="wn-item">
+       <span class="wn-date">2026年4月8日〜10日</span>
+       <span class="wn-title">JAPAN IT WEEK (ビッグサイト東棟)</span>
+       <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2026年3月20日〜21日</span>
+       <span class="wn-title"><a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス)
+       <a class="wn-x" href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2026年3月3日〜6日</span>
+       <span class="wn-title">リテールテック (ビッグサイト東棟)
+       <a class="wn-x" href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a></span>
+       <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2026年2月25日〜27日</span>
+       <span class="wn-title">CARE SHOW JAPAN (ビッグサイト東棟)
+       <a class="wn-x" href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a></span>
+       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2026年2月23日</span>
+       <span class="wn-title"><a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a>
+       <a class="wn-x" href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2026年1月8日〜10日</span>
+       <span class="wn-title"><a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a>
+       <a class="wn-x" href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>
+       <a class="wn-x" href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年11月26日〜28日</span>
+       <span class="wn-title"><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a>
+       <a class="wn-x" href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>
+       <a class="wn-x" href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年11月9日</span>
+       <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a>
+       <a class="wn-x" href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年8月30日</span>
+       <span class="wn-title"><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">ものづくりと最新技術体験ワークショップ in もてぎ</a>
+       <a class="wn-x" href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年7月30日〜8月1日</span>
+       <span class="wn-title">SPORTEC 2025 (ビッグサイト東棟)
+       <a class="wn-x" href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a></span>
+       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年7月18日〜20日</span>
+       <span class="wn-title"><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a>
+       <a class="wn-x" href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a></span>
+     </li>
+     <li class="wn-item">
+       <span class="wn-date">2025年5月29日</span>
+       <span class="wn-title"><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a>
+       <a class="wn-x" href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a></span>
+       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
      </li>
    </ul>
  </div>
@@ -200,13 +321,23 @@
    <button class="collapsible">出展履歴・Special Thanks</button>
    <div class="collapse-content">
      <div class="collapse-content-inner">
-       2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025(六本木)</a> - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-       2025年7月30日〜8月1日 SPORTEC 2025 (ビックサイト) - YAK-OHブースにてSOLAR POLEシンクロモード出展<br>
-       2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビックサイト)</a><br>
-       2026年1月8日〜10日 <a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a><br><br>
+       2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a> (<a href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a>)<br>
+       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+       2025年7月30日〜8月1日 SPORTEC 2025 (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a>)<br>
+       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+       2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a> (<a href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>) (<a href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a>)<br>
+       2026年1月8日〜10日 <a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a> (<a href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>) (<a href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a>)<br>
+       2026年2月25日〜27日 CARE SHOW JAPAN (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a>)<br>
+       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+       2026年3月3日〜6日 リテールテック (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a>)<br>
+       <span style="font-size: 0.85em;">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br>
+       2026年2月23日 <a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a> (<a href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a>)<br>
+       2026年3月20日〜21日 <a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス) (<a href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a>)<br>
+       2026年4月8日〜10日 JAPAN IT WEEK (ビッグサイト東棟)<br>
+       <span style="font-size: 0.85em;">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br><br>
        <strong>Special Thanks</strong><br>
        • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)<br>
-       • <a href="https://www.solar-pole.jp/" target="_blank">YAK-OH Corporation</a> (Solar-Pole)
+       • <a href="https://www.solar-pole.jp/" target="_blank">株式会社YAK-OH</a> (Solar-Pole)
      </div>
    </div>
 </div>
@@ -239,9 +370,9 @@
        2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a><br>
        2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
        2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
-       2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit(京都みやこめっせ)</a> - Mirror Of Terror (2Player)<br>
-       2025年8月30日 <a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">「ものづくりと最新技術体験ワークショップ in もてぎ」</a><br>
-       <span style="margin-left: 1em; display: block;">関連記事: <a href="https://www.youtube.com/live/owtHVMqOMRk?si=YaXd-z5h3M45a4f4&t=1100" target="_blank">Protopedia 動画リンク（アーカイブ）18分20秒頃〜</a>, <a href="https://www.solar-pole.jp/news/%E3%80%90%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A%E3%80%91%E3%80%8C%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A%E3%81%A8%E6%9C%80%E6%96%B0%E6%8A%80%E8%A1%93%E4%BD%93%E9%A8%93%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-in-%E3%82%82%E3%81%A6%E3%81%8E%E3%80%8D%E3%81%AB%E3%81%A6%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%9D%E3%83%BC%E3%83%AB%E4%BD%93%E6%93%8D%E3%82%92%E5%87%BA%E5%B1%95%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" target="_blank">SOLAR POLE</a></span>
+       2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a> (<a href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a>)<br>
+       2025年8月30日 <a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">「ものづくりと最新技術体験ワークショップ in もてぎ」</a> (<a href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a>)<br>
+       <span style="font-size: 0.85em;">関連記事: <a href="https://www.youtube.com/live/owtHVMqOMRk?si=YaXd-z5h3M45a4f4&t=1100" target="_blank">Protopedia 動画リンク（アーカイブ）18分20秒頃〜</a>, <a href="https://www.solar-pole.jp/news/%E3%80%90%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A%E3%80%91%E3%80%8C%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A%E3%81%A8%E6%9C%80%E6%96%B0%E6%8A%80%E8%A1%93%E4%BD%93%E9%A8%93%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-in-%E3%82%82%E3%81%A6%E3%81%8E%E3%80%8D%E3%81%AB%E3%81%A6%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%9D%E3%83%BC%E3%83%AB%E4%BD%93%E6%93%8D%E3%82%92%E5%87%BA%E5%B1%95%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" target="_blank">SOLAR POLE</a></span>
      </div>
    </div>
 </div>
@@ -336,7 +467,7 @@
    <div class="collapse-content">
      <div class="collapse-content-inner">
        2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) LANDNAX 202x 初出展<br>
-       2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> )
+       2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
      </div>
    </div>
 </div>
@@ -367,7 +498,7 @@
         2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )<br>
         2024年3月30日 80mk2会出展(クローズドイベント) - レトロゲームサミットで見つけてくださった @yoneさんによる出展 ( <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a> )<br>
         2024年5月4日 東京ゲームダンジョン5 出展 (浜松町)<br>
-        2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> )
+        2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
       </div>
     </div>
  </div>
