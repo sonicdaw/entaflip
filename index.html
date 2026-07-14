@@ -1,605 +1,898 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<title>ENTAFLIP (Masahide Sumiyoshi)'s Creative Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENTAFLIP | Masahide Sumiyoshi's Creative Portfolio</title>
+<meta name="description" content="ENTAFLIP（エンタフリップ）— 住吉政英のクリエイティブポートフォリオ。「鏡ゲーム」「エレベーターの気持ちになるゲーム」など、新しいエンタの種を創造しています。">
+<meta property="og:title" content="ENTAFLIP | Masahide Sumiyoshi's Creative Portfolio">
+<meta property="og:description" content="新しいエンタの種を創造しています。Mirror Of Terror / Elebeater / LANDNAX ほか。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://entaflip.com/">
+<meta property="og:image" content="https://entaflip.com/about/img/entaflip_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
- body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
- }
- header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
- }
- h1, h2, h3 {
-    margin: 0;
- }
- section {
-    padding: 20px;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #333;
- }
- table {
-    border-collapse: collapse;
-    width: 100%;
- }
- th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
- }
- th {
-    background-color: #f2f2f2;
- }
- footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
- }
- .value-proposition {
-    background-color: #f1f1f1;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
- }
- .value-proposition p {
-    text-align: center;
- }
- h3 {
-    margin-top: 20px;
-    margin-bottom: 20px;
- }
- @media screen and (max-width: 600px) {
-    table {
-       font-size: 0.8em;
-    }
-    th, td {
-       word-break: break-word;
-    }
-    .value-proposition {
-       font-size: 1em;
-    }
-    iframe {
-       width: 100%;
-       aspect-ratio: 16/9;
-    }
- }
- .small-text {
-    font-size: 0.8em;
- }
- .cool-link {
-    display: inline-block;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 5px;
- }
- .cool-link:hover {
-    background-color: #555;
- }
- .game-section {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
- }
- .game-title {
-    font-size: 1.5em;
-    color: #333;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
-    margin-top: 0;
- }
- .game-description {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
-    margin-bottom: 10px;
- }
- 
- /* 折りたたみセクション用のスタイル */
- .collapsible {
-    background-color: #f5f5f5;
-    color: #333;
-    cursor: pointer;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 0.9em;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-weight: bold;
-    transition: background-color 0.3s;
- }
- .collapsible:hover {
-    background-color: #e0e0e0;
- }
- .collapsible:after {
-    content: '\002B'; /* + マーク */
-    color: #333;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
- }
- .collapsible.active:after {
-    content: "\2212"; /* - マーク */
- }
- .collapse-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background-color: #fafafa;
-    border-radius: 0 0 5px 5px;
- }
- .collapse-content-inner {
-    padding: 15px;
-    font-size: 0.85em;
-    line-height: 1.8;
- }
- .media-section {
-    margin-top: 15px;
- }
- .media-section iframe {
-    margin-bottom: 10px;
- }
- .wn-item {
-    display: grid;
-    grid-template-columns: 11em 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    padding: 8px 0;
-    font-size: 0.88em;
- }
- .wn-item + .wn-item {
-    border-top: 1px solid #ddd;
- }
- .wn-date {
-    grid-row: 1;
-    grid-column: 1;
-    color: #555;
-    white-space: nowrap;
-    padding-top: 1px;
- }
- .wn-title {
-    grid-row: 1;
-    grid-column: 2;
-    color: #222;
-    font-weight: bold;
- }
- .wn-note {
-    grid-row: 2;
-    grid-column: 2;
-    color: #777;
-    font-size: 0.9em;
-    margin-top: 2px;
- }
- .wn-x {
-    display: inline-block;
-    background-color: #555;
-    color: white !important;
-    font-size: 0.75em;
-    padding: 1px 6px;
-    border-radius: 3px;
-    text-decoration: none;
-    margin-left: 4px;
-    vertical-align: middle;
-    font-weight: normal;
- }
- .wn-x:hover {
-    background-color: #333;
- }
- @media screen and (max-width: 600px) {
-    .wn-item {
-       grid-template-columns: 1fr;
-    }
-    .wn-date {
-       grid-column: 1;
-       color: #888;
-       font-size: 0.9em;
-    }
-    .wn-title {
-       grid-row: 2;
-       grid-column: 1;
-    }
-    .wn-note {
-       grid-row: 3;
-       grid-column: 1;
-    }
- }
+:root {
+  --bg: #f7f4ee;          /* 紙のような生成り */
+  --ink: #1c1b19;
+  --ink-soft: #55524c;
+  --line: #e2ddd2;
+  --card: #ffffff;
+  --accent: #e8590c;      /* サイト共通アクセント(What's New 由来のオレンジ) */
+  /* 作品ごとの個別カラー */
+  --c-mirror: #a02334;    /* MIRROR: 鏡の恐怖の深紅 */
+  --c-landnax: #2c5fd8;   /* LANDNAX: 宇宙シューティングの青 */
+  --c-touch: #0f9d78;     /* TOUCH BREAKER: システム復旧の緑 */
+  --c-karuta: #c73e3a;    /* ことばづけかるた: 和の緋色 */
+  --c-elebeater: #d98e04; /* Elebeater: エレベーターの琥珀 */
+  --c-midmaster: #6f42c1; /* MID MASTER: 冒険RPGの紫 */
+  --c-music: #a8842c;     /* MUSIC: 金 */
+  --c-comic: #d63384;     /* COMIC: ポップなピンク */
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+  font-size: 16px;
+}
+a { color: inherit; }
+img { max-width: 100%; height: auto; }
+.en { font-family: "Outfit", "Zen Kaku Gothic New", sans-serif; }
+
+/* ---------- ナビゲーション ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 244, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.nav-brand {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  font-size: 1.05em;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.82em;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 6px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover { background: var(--ink); color: #fff; }
+
+/* ---------- ヒーロー ---------- */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 20px 48px;
+  text-align: center;
+}
+.hero-logo { max-width: min(420px, 78vw); display: block; margin: 0 auto; }
+.hero-kana {
+  font-size: 0.85em;
+  letter-spacing: 0.5em;
+  color: var(--ink-soft);
+  /* ロゴ画像上部の余白ぶんを画像サイズに連動して詰める */
+  margin-bottom: calc(min(420px, 78vw) * -0.21);
+  position: relative;
+  z-index: 1;
+}
+.hero-sub {
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 0.28em;
+  font-size: 0.8em;
+  color: var(--ink-soft);
+  margin-top: -6px;
+}
+.hero-quotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 26px 0;
+}
+.hero-quotes span {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.92em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.hero-lead { font-size: 1.25em; font-weight: 700; letter-spacing: 0.04em; }
+.hero-lead em { font-style: normal; border-bottom: 4px solid var(--accent); }
+
+/* ---------- 共通レイアウト ---------- */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+section { padding: 48px 0; }
+.sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
+.sec-head h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.9em;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+.sec-head .jp { color: var(--ink-soft); font-size: 0.9em; }
+.sec-bar { flex: 1; height: 1px; background: var(--line); }
+
+/* ---------- What's New ---------- */
+.wn-list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.wn-item {
+  display: grid;
+  grid-template-columns: 12em 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  padding: 12px 18px;
+  font-size: 0.92em;
+}
+.wn-item + .wn-item { border-top: 1px solid var(--line); }
+.wn-date { grid-row: 1; grid-column: 1; color: var(--accent); font-weight: 700; white-space: nowrap; font-size: 0.92em; padding-top: 2px; }
+.wn-title { grid-row: 1; grid-column: 2; font-weight: 700; }
+.wn-title a { color: var(--ink); }
+.wn-note { grid-row: 2; grid-column: 2; color: var(--ink-soft); font-size: 0.88em; }
+.wn-x {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff !important;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.72em;
+  padding: 1px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 5px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+.wn-x:hover { background: var(--accent); }
+
+/* ---------- 年代の章見出し ---------- */
+.era {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 44px 0 20px;
+}
+.era:first-of-type { margin-top: 0; }
+.era .decade {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.4em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.era .label { color: var(--ink-soft); font-size: 0.95em; font-weight: 500; }
+.era .rule { flex: 1; height: 2px; background: var(--ink); opacity: 0.12; }
+
+/* ---------- 作品カード(シリーズ = 1ユニット) ---------- */
+.work {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--wc, var(--accent));
+  border-radius: 14px;
+  padding: 26px 26px 20px;
+  margin-bottom: 26px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  scroll-margin-top: 70px;
+}
+.work-head { margin-bottom: 6px; }
+.work-title {
+  font-family: "Outfit", "Zen Kaku Gothic New", sans-serif;
+  font-size: 1.55em;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+.work-range {
+  display: inline-block;
+  background: var(--wc, var(--accent));
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.58em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 12px;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+.work-catch { color: var(--ink-soft); font-size: 0.95em; margin: 4px 0 0; }
+
+/* シリーズ内の世代(年代別)タイムライン */
+.gen {
+  position: relative;
+  margin-top: 22px;
+  padding: 0 0 4px 26px;
+  border-left: 2px solid color-mix(in srgb, var(--wc, var(--accent)) 30%, transparent);
+}
+.gen:last-child { padding-bottom: 0; }
+.gen::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--wc, var(--accent));
+  border: 2px solid var(--card);
+}
+.gen-year {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.05em;
+  color: var(--wc, var(--accent));
+  letter-spacing: 0.05em;
+}
+.gen-platform {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.75em;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-left: 8px;
+  vertical-align: 1px;
+}
+.gen-title { font-size: 1.12em; font-weight: 700; margin: 2px 0; }
+.gen-desc { color: var(--ink-soft); font-size: 0.92em; margin: 0 0 10px; }
+
+/* 動画 */
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.caption { display: block; font-size: 0.8em; color: var(--ink-soft); margin: -2px 0 10px; }
+
+/* ボタンリンク */
+.btn {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 9px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 4px 6px 4px 0;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn:hover { background: var(--wc, var(--accent)); transform: translateY(-1px); }
+
+/* 折りたたみ(履歴など) */
+details {
+  background: #faf9f6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 0.88em;
+}
+details summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 700;
+  list-style: none;
+  user-select: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: "＋"; float: right; color: var(--wc, var(--accent)); font-weight: 700; }
+details[open] summary::after { content: "−"; }
+details .inner { padding: 4px 16px 14px; line-height: 2; border-top: 1px dashed var(--line); }
+details .note { font-size: 0.88em; color: var(--ink-soft); }
+
+/* 1980s クロスリファレンス */
+.origin-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.origin-links a {
+  text-decoration: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85em;
+}
+.origin-links a:hover { border-color: var(--ink); }
+.origin-note { color: var(--ink-soft); font-size: 0.9em; margin: 0 0 4px; }
+
+/* ---------- ABOUT ---------- */
+.about-card {
+  background: var(--ink);
+  color: #f3f0ea;
+  border-radius: 14px;
+  padding: 34px 30px;
+}
+.about-card .role { color: #b9b3a8; font-family: "Outfit", sans-serif; letter-spacing: 0.12em; font-size: 0.82em; }
+.about-card p { color: #d8d3c9; font-size: 0.95em; }
+.about-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; padding: 0; list-style: none; }
+.about-facts li {
+  border: 1px solid #4a463f;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85em;
+  color: #e8e3d9;
+}
+
+/* ---------- フッター ---------- */
+footer {
+  background: var(--ink);
+  color: #b9b3a8;
+  text-align: center;
+  padding: 22px 16px;
+  font-size: 0.82em;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 640px) {
+  body { font-size: 15px; }
+  .hero { padding: 40px 16px 32px; }
+  .hero-lead { font-size: 1.1em; }
+  .work { padding: 20px 16px 16px; }
+  .gen { padding-left: 20px; }
+  .wn-item { grid-template-columns: 1fr; padding: 12px 14px; }
+  .wn-date { grid-row: 1; }
+  .wn-title { grid-row: 2; grid-column: 1; }
+  .wn-note { grid-row: 3; grid-column: 1; }
+  .era .decade { font-size: 1.8em; }
+  .sec-head h2 { font-size: 1.5em; }
+}
 </style>
 </head>
-<body>
-<header>
- <h1>ENTAFLIP<br>Masahide Sumiyoshi's Creative Portfolio</h1>
+<body id="top">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">ENTAFLIP</a>
+    <div class="nav-links">
+      <a href="#news">NEWS</a>
+      <a href="#games">GAMES</a>
+      <a href="#music">MUSIC</a>
+      <a href="#comic">COMIC</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-kana">エンタフリップ</div>
+  <img class="hero-logo" src="./about/img/entaflip_logo.png" alt="ENTAFLIP">
+  <div class="hero-sub en">MASAHIDE SUMIYOSHI'S CREATIVE PORTFOLIO</div>
+  <div class="hero-quotes">
+    <span>「二人で向かい合う鏡ゲーム」</span>
+    <span>「エレベーターの気持ちになるゲーム」</span>
+    <span>「もしショパンがサブスク世代だったら」</span>
+  </div>
+  <p class="hero-lead">など、<em>新しいエンタの種</em>を創造しています。</p>
 </header>
 
-<section class="value-proposition">
- <p>「二人で向かい合う鏡ゲーム」<br>「エレベーターの気持ちになるゲーム」<br>
-  「もしショパンがサブスク世代だったら」<br>など<br><br>新しいエンタの種を創造しています。
-</p></section>
-
-<div id="whats-new" class="section" style="background-color: #f0f0f0; padding: 20px; margin-bottom: 30px; border-radius: 10px;">
-   <h2 style="color: #ff6600; margin-bottom: 16px;">What's New</h2>
-   <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-     <li class="wn-item">
-       <span class="wn-date">2026年4月8日〜10日</span>
-       <span class="wn-title">JAPAN IT WEEK (ビッグサイト東棟)</span>
-       <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2026年3月20日〜21日</span>
-       <span class="wn-title"><a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス)
-       <a class="wn-x" href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2026年3月3日〜6日</span>
-       <span class="wn-title">リテールテック (ビッグサイト東棟)
-       <a class="wn-x" href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a></span>
-       <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2026年2月25日〜27日</span>
-       <span class="wn-title">CARE SHOW JAPAN (ビッグサイト東棟)
-       <a class="wn-x" href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a></span>
-       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2026年2月23日</span>
-       <span class="wn-title"><a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a>
-       <a class="wn-x" href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2026年1月8日〜10日</span>
-       <span class="wn-title"><a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a>
-       <a class="wn-x" href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>
-       <a class="wn-x" href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年11月26日〜28日</span>
-       <span class="wn-title"><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a>
-       <a class="wn-x" href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>
-       <a class="wn-x" href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年11月9日</span>
-       <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a>
-       <a class="wn-x" href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年8月30日</span>
-       <span class="wn-title"><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">ものづくりと最新技術体験ワークショップ in もてぎ</a>
-       <a class="wn-x" href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年7月30日〜8月1日</span>
-       <span class="wn-title">SPORTEC 2025 (ビッグサイト東棟)
-       <a class="wn-x" href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a></span>
-       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年7月18日〜20日</span>
-       <span class="wn-title"><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a>
-       <a class="wn-x" href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a></span>
-     </li>
-     <li class="wn-item">
-       <span class="wn-date">2025年5月29日</span>
-       <span class="wn-title"><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a>
-       <a class="wn-x" href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a></span>
-       <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
-     </li>
-   </ul>
- </div>
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="en">WHAT'S NEW</h2><span class="jp">最新情報</span><span class="sec-bar"></span>
+    </div>
+    <ul class="wn-list">
+      <li class="wn-item">
+        <span class="wn-date">2026年4月8日〜10日</span>
+        <span class="wn-title">JAPAN IT WEEK (ビッグサイト東棟)</span>
+        <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2026年3月20日〜21日</span>
+        <span class="wn-title"><a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス)
+        <a class="wn-x" href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2026年3月3日〜6日</span>
+        <span class="wn-title">リテールテック (ビッグサイト東棟)
+        <a class="wn-x" href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a></span>
+        <span class="wn-note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2026年2月25日〜27日</span>
+        <span class="wn-title">CARE SHOW JAPAN (ビッグサイト東棟)
+        <a class="wn-x" href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a></span>
+        <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2026年2月23日</span>
+        <span class="wn-title"><a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a>
+        <a class="wn-x" href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2026年1月8日〜10日</span>
+        <span class="wn-title"><a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a>
+        <a class="wn-x" href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>
+        <a class="wn-x" href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年11月26日〜28日</span>
+        <span class="wn-title"><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a>
+        <a class="wn-x" href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>
+        <a class="wn-x" href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年11月9日</span>
+        <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a>
+        <a class="wn-x" href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年8月30日</span>
+        <span class="wn-title"><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">ものづくりと最新技術体験ワークショップ in もてぎ</a>
+        <a class="wn-x" href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年7月30日〜8月1日</span>
+        <span class="wn-title">SPORTEC 2025 (ビッグサイト東棟)
+        <a class="wn-x" href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a></span>
+        <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年7月18日〜20日</span>
+        <span class="wn-title"><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a>
+        <a class="wn-x" href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a></span>
+      </li>
+      <li class="wn-item">
+        <span class="wn-date">2025年5月29日</span>
+        <span class="wn-title"><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a>
+        <a class="wn-x" href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a></span>
+        <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <section id="games">
- <h2>GAME</h2>
-
-<div class="game-section">
-   <p class="game-description">モーションシンクロゲーム</p>
-   <h3 class="game-title">鏡ゲーム (1Player Mirror Of Terror)<br>(2025年 Browser)</h3>
-   <a href="./mirrorofterror" class="cool-link" target="_blank">Mirror Of Terror とは</a>
-   
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>
-
-   <button class="collapsible">出展履歴・Special Thanks</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a> (<a href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a>)<br>
-       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
-       2025年7月30日〜8月1日 SPORTEC 2025 (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a>)<br>
-       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
-       2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a> (<a href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>) (<a href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a>)<br>
-       2026年1月8日〜10日 <a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a> (<a href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>) (<a href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a>)<br>
-       2026年2月25日〜27日 CARE SHOW JAPAN (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a>)<br>
-       <span style="font-size: 0.85em;">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
-       2026年3月3日〜6日 リテールテック (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a>)<br>
-       <span style="font-size: 0.85em;">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br>
-       2026年2月23日 <a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a> (<a href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a>)<br>
-       2026年3月20日〜21日 <a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス) (<a href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a>)<br>
-       2026年4月8日〜10日 JAPAN IT WEEK (ビッグサイト東棟)<br>
-       <span style="font-size: 0.85em;">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br><br>
-       <strong>Special Thanks</strong><br>
-       • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device & Movie Recording)<br>
-       • <a href="https://www.solar-pole.jp/" target="_blank">株式会社YAK-OH</a> (Solar-Pole)
-     </div>
-   </div>
-</div>
-
- <div class="game-section">
-   <p class="game-description">現実空間モーションシンクロゲーム</p>
-   <h3 class="game-title">Mirror Of Terror (2 Players)<br>(2024年 Browser)</h3>
-   <a href="./mirrorofterror" class="cool-link" target="_blank">Mirror Of Terror とは</a>
-
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-     <span class="small-text">2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024</span>
-   </div>
-
-   <button class="collapsible">その他のプレイ動画</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner media-section">
-       <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-       <span class="small-text">2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024</span><br><br>
-       
-       <iframe src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&start=2126" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-       <span class="small-text">2024年9月11日配信 東京ゲームショウ2024 HELLO！ INDIE！～世界のインディーゲーム、TGSに大集合～ (35:26〜)</span>
-     </div>
-   </div>
-
-   <button class="collapsible">出展履歴・メディア掲載</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2024年9月26日〜9月29日 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a><br>
-       2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a><br>
-       2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
-       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
-       2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a> (<a href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a>)<br>
-       2025年8月30日 <a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">「ものづくりと最新技術体験ワークショップ in もてぎ」</a> (<a href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a>)<br>
-       <span style="font-size: 0.85em;">関連記事: <a href="https://www.youtube.com/live/owtHVMqOMRk?si=YaXd-z5h3M45a4f4&t=1100" target="_blank">Protopedia 動画リンク（アーカイブ）18分20秒頃〜</a>, <a href="https://www.solar-pole.jp/news/%E3%80%90%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A%E3%80%91%E3%80%8C%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A%E3%81%A8%E6%9C%80%E6%96%B0%E6%8A%80%E8%A1%93%E4%BD%93%E9%A8%93%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-in-%E3%82%82%E3%81%A6%E3%81%8E%E3%80%8D%E3%81%AB%E3%81%A6%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%9D%E3%83%BC%E3%83%AB%E4%BD%93%E6%93%8D%E3%82%92%E5%87%BA%E5%B1%95%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" target="_blank">SOLAR POLE</a></span>
-     </div>
-   </div>
-</div>
-
- <div class="game-section">
-    <p class="game-description">鏡の中の人になるアクションゲーム</p>  
-    <h3 class="game-title">MIRROR MAN<br>(1987年 PC-8001)</h3>
-    
-    <div class="media-section">
-      <iframe src="https://www.youtube.com/embed/ZKhKRjIBst0?si=65xl1VlwsZFb_rAO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="en">GAMES</h2><span class="jp">作品(年代別)</span><span class="sec-bar"></span>
     </div>
 
-    <button class="collapsible">掲載・出展履歴</button>
-    <div class="collapse-content">
-      <div class="collapse-content-inner">
-        「PC-8801・PC-8001プログラム大全集」掲載 , 電波新聞社 (1987年)<br>
-        2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
+    <!-- ================= 2020s ================= -->
+    <div class="era">
+      <span class="decade en">2020s</span>
+      <span class="label">現在進行形の作品 — 体験型・ブラウザゲーム</span>
+      <span class="rule"></span>
+    </div>
+
+    <!-- MIRROR シリーズ (1987-) -->
+    <article class="work" id="mirror" style="--wc: var(--c-mirror);">
+      <div class="work-head">
+        <h3 class="work-title">MIRROR シリーズ<span class="work-range en">1987 — 2025</span></h3>
+        <p class="work-catch">「鏡の中の人になる」—— 1987年のPC-8001用アクションゲームから、現実空間で動きをシンクロさせるデジタル遊具へ。</p>
       </div>
-    </div>
- </div>
 
- <div class="game-section">
-   <p class="game-description">かるたのあとのことばづけ</p>
-   <h3 class="game-title">ことばづけかるた<br>(2021年)</h3>
-   <a href="https://entaflip.com/kotobadukekaruta/Kotobadukekaruta.pdf" class="cool-link" target="_blank">ルール説明</a>
-   <a href="https://entaflip.com/kotobadukekaruta/" class="cool-link" target="_blank">デジタル版プレイ</a>
-
-   <button class="collapsible">商標登録・出展履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2021年10月07日 登録商標「ことばづけかるた」（商標登録第6453218号）<br>
-       2023年12月9日 ゲームマーケット2023秋 出展 ( <a href="https://note.com/sonicdaw/n/n3ae731cb6ef9" target="_blank">note</a> )<br>
-       2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
-       2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
-       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 完全 AI 制作のデジタルことばづけかるた 初出展
-     </div>
-   </div>
-</div>
-
- <div class="game-section">
-   <p class="game-description">エレベーターの気持ちになる頭脳アクションゲーム<br>Be Elevator. Control the elevator chaos<br></p>
-   <h3 class="game-title">Elebeater<br>(2014年〜 Browser)</h3>
-   <a href="https://elebeater.net" class="cool-link" target="_blank">Play</a>
-   <a href="https://note.com/sonicdaw/m/m23c1ef33b421" class="cool-link" target="_blank">note</a>
-
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/5ahmorvdtUo?si=gaJkQIYSHwgBSXZe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>
-
-   <button class="collapsible">その他の動画</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner media-section">
-       <iframe src="https://www.youtube.com/embed/i3T24womY1Q?si=6aIHb4oSE8mbXQQZ&start=50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-       <span class="small-text">講談社 Amazing Indie Games</span><br><br>
-       
-       <iframe src="https://www.youtube.com/embed/1awaW6KAUwE?si=dwBqZIolBdLvIOEP&start=5893" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-       <span class="small-text">東京ゲームショウ2022 インディーゲーム 特別番組 (1:38:18〜)</span>
-     </div>
-   </div>
-
-   <button class="collapsible">商標登録・出展履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2022年1月31日 登録商標「Ｅｌｅｂｅａｔｅｒ」（商標登録第6506550号）<br>
-       2022年9月15日〜9月18日 TOKYO GAME SHOW 2022 Indie Game 出展 ( <a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a> / <a href="https://youtu.be/1awaW6KAUwE?t=5893" target="_blank">IndieGameTokyo2022</a> )<br>
-       2024年5月4日 東京ゲームダンジョン5 出展<br>
-       2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
-       2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&t=360s" target="_blank">YouTube Channel</a><br>
-       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
-     </div>
-   </div>
-</div>
-
-<div class="game-section">
-   <p class="game-description">オリジナルのアイテム・オプション形式のレトロシューティングゲーム(リメイク)</p>
-   <h3 class="game-title">LANDNAX 202x</h3>
-
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/-HKfh2Qt8r0?si=hopuoZFbSPtvhJyj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-     <span class="small-text">タイトル (2025年2月16時点)</span>
-   </div>
-
-   <button class="collapsible">その他の動画</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner media-section">
-       <iframe src="https://www.youtube.com/embed/lmhKACx8fOo?si=Y_lfkamiRTxjnMf-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-       <span class="small-text">プレイ動画 (2025年2月16時点)</span>
-     </div>
-   </div>
-
-   <button class="collapsible">掲載・出展履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) LANDNAX 202x 初出展<br>
-       2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
-     </div>
-   </div>
-</div>
-
- <div class="game-section">
-    <p class="game-description">オリジナルのアイテム・オプション形式のレトロシューティングゲーム</p>
-    <h3 class="game-title">LANDNAX<br>(1989年 PC-8001)</h3>
-
-    <div class="media-section">
-      <iframe src="https://www.youtube.com/embed/IIro12bhd-s?si=-LDVQX-J-SR-DTuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-
-    <button class="collapsible">その他の動画</button>
-    <div class="collapse-content">
-      <div class="collapse-content-inner media-section">
-        <iframe src="https://www.youtube.com/embed/fJpI2ttEX8g?si=jKcF-BPC_gWm6PuQ&start=2044" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-        <span class="small-text">qbertgamesJPチャンネル で紹介していただきました。(34:04〜)</span><br><br>
-        
-        <iframe src="https://www.youtube.com/embed/hawgBlmQ_kY?si=WdCgYTo-fU3blQJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-        <span class="small-text">2024年3月30日のPC-8001mk2(レトロパソコン)の会のプレイ実況動画</span>
+      <!-- 2025: 1 Player -->
+      <div class="gen">
+        <span class="gen-year en">2025</span><span class="gen-platform en">Browser</span>
+        <h4 class="gen-title">鏡ゲーム (1Player Mirror Of Terror)</h4>
+        <p class="gen-desc">モーションシンクロゲーム。1人でエクササイズやポージングに挑戦し、お手本の動きとのシンクロで高得点を目指します。</p>
+        <a href="./mirrorofterror" class="btn" target="_blank">Mirror Of Terror とは</a>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/tqxzIUKv9A0?si=sTu-3pr81NactUVO" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <details>
+          <summary>出展履歴・Special Thanks</summary>
+          <div class="inner">
+            2025年5月29日 <a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a> (<a href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a>)<br>
+            <span class="note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+            2025年7月30日〜8月1日 SPORTEC 2025 (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a>)<br>
+            <span class="note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+            2025年11月26日〜28日 <a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a> (<a href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>) (<a href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a>)<br>
+            2026年1月8日〜10日 <a href="https://xr-meta-biz.tokyo/" target="_blank">東京デジコンクス (ビッグサイト南棟)</a> (<a href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>) (<a href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a>)<br>
+            2026年2月25日〜27日 CARE SHOW JAPAN (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2026479030497849615" target="_blank">X</a>)<br>
+            <span class="note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span><br>
+            2026年3月3日〜6日 リテールテック (ビッグサイト東棟) (<a href="https://x.com/sonicdaw/status/2029865540773368207" target="_blank">X</a>)<br>
+            <span class="note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br>
+            2026年2月23日 <a href="https://whitescorpion.jp/news/2026/02/20/9291/" target="_blank">ホワイトスコーピオン個別握手会</a> (<a href="https://x.com/OVERSE_JP/status/2025733263269253147" target="_blank">X</a>)<br>
+            2026年3月20日〜21日 <a href="https://indiegamessummit.tokyo/" target="_blank">東京インディーゲームサミット</a> (高円寺イマジナス) (<a href="https://x.com/sonicdaw/status/2034837068866883641" target="_blank">X</a>)<br>
+            2026年4月8日〜10日 JAPAN IT WEEK (ビッグサイト東棟)<br>
+            <span class="note">株式会社 エフケイシステム様ブースにて出展 (最終日午後以外はデモモード)</span><br><br>
+            <strong>Special Thanks</strong><br>
+            • <a href="https://musvi.jp/" target="_blank">MUSVI Corporation</a> (Device &amp; Movie Recording)<br>
+            • <a href="https://www.solar-pole.jp/" target="_blank">株式会社YAK-OH</a> (Solar-Pole)
+          </div>
+        </details>
       </div>
-    </div>
 
-    <button class="collapsible">掲載・出展履歴</button>
-    <div class="collapse-content">
-      <div class="collapse-content-inner">
-        「月刊マイコン」掲載 , 電波新聞社 (1989年4月号)<br>
-        2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )<br>
-        2024年3月30日 80mk2会出展(クローズドイベント) - レトロゲームサミットで見つけてくださった @yoneさんによる出展 ( <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a> )<br>
-        2024年5月4日 東京ゲームダンジョン5 出展 (浜松町)<br>
-        2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
+      <!-- 2024: 2 Players -->
+      <div class="gen">
+        <span class="gen-year en">2024</span><span class="gen-platform en">Browser</span>
+        <h4 class="gen-title">Mirror Of Terror (2 Players)</h4>
+        <p class="gen-desc">現実空間モーションシンクロゲーム。「鏡の前にいる人」と「鏡の中にいる人」に分かれて動きをシンクロさせます。TOKYO GAME SHOW 2024 Selected Indie 80 出展作品。</p>
+        <a href="./mirrorofterror" class="btn" target="_blank">Mirror Of Terror とは</a>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/w_x8LpGhluc?si=vwRpShHKRGG2ajvs" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <span class="caption">2024年9月29日 Performed by <a href="https://www.vrmonkey.com.br/" target="_blank">VRMonkey</a> from booth A74 <a href="https://vrmonkey.com.br/projects/honeypot/" target="_blank">Honey Pot</a> (Brazil) / Tokyo Game Show 2024</span>
+        <details>
+          <summary>その他のプレイ動画</summary>
+          <div class="inner">
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/yPTjFmNGcXE?si=9B0uc-vOYuaX1jLi" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="caption">2024年9月28日 Performed by らーさんず (Japan) / Tokyo Game Show 2024</span>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/4Q7TQz8Pyzk?si=Z4lKKCmSWPwFdORu&amp;start=2126" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="caption">2024年9月11日配信 東京ゲームショウ2024 HELLO！ INDIE！～世界のインディーゲーム、TGSに大集合～ (35:26〜)</span>
+          </div>
+        </details>
+        <details>
+          <summary>出展履歴・メディア掲載</summary>
+          <div class="inner">
+            2024年9月26日〜9月29日 <a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a><br>
+            2024年9月29日 <a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">「鏡の前にいる人」役と「鏡の中にいる人」役が動きをシンクロ！　デジタルの遊具「Mirror Of Terror」プレイレポート(4Gamer)</a><br>
+            2024年11月16日〜17日 <a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> 幕張メッセ ホール7 <a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11 出展エリア</a><br>
+            2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 机で遊ぶ Table Mirror Of Terror 初出展<br>
+            2025年7月18〜20日 <a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a> (<a href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a>)<br>
+            2025年8月30日 <a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">「ものづくりと最新技術体験ワークショップ in もてぎ」</a> (<a href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a>)<br>
+            <span class="note">関連記事: <a href="https://www.youtube.com/live/owtHVMqOMRk?si=YaXd-z5h3M45a4f4&amp;t=1100" target="_blank">Protopedia 動画リンク（アーカイブ）18分20秒頃〜</a>, <a href="https://www.solar-pole.jp/news/%E3%80%90%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A%E3%80%91%E3%80%8C%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A%E3%81%A8%E6%9C%80%E6%96%B0%E6%8A%80%E8%A1%93%E4%BD%93%E9%A8%93%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-in-%E3%82%82%E3%81%A6%E3%81%8E%E3%80%8D%E3%81%AB%E3%81%A6%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%9D%E3%83%BC%E3%83%AB%E4%BD%93%E6%93%8D%E3%82%92%E5%87%BA%E5%B1%95%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" target="_blank">SOLAR POLE</a></span>
+          </div>
+        </details>
       </div>
+
+      <!-- 1987: MIRROR MAN -->
+      <div class="gen">
+        <span class="gen-year en">1987</span><span class="gen-platform en">PC-8001</span>
+        <h4 class="gen-title">MIRROR MAN <span style="font-weight:400; font-size:0.8em; color:var(--ink-soft);">— シリーズの原点</span></h4>
+        <p class="gen-desc">鏡の中の人になるアクションゲーム。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/ZKhKRjIBst0?si=65xl1VlwsZFb_rAO" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <details>
+          <summary>掲載・出展履歴</summary>
+          <div class="inner">
+            「PC-8801・PC-8001プログラム大全集」掲載 , 電波新聞社 (1987年)<br>
+            2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- LANDNAX シリーズ (1989-) -->
+    <article class="work" id="landnax" style="--wc: var(--c-landnax);">
+      <div class="work-head">
+        <h3 class="work-title">LANDNAX シリーズ<span class="work-range en">1989 — 202x</span></h3>
+        <p class="work-catch">オリジナルのアイテム・オプション形式のレトロシューティングゲーム。1989年のPC-8001版を、現代にリメイク中。</p>
+      </div>
+
+      <!-- 202x リメイク -->
+      <div class="gen">
+        <span class="gen-year en">202x</span><span class="gen-platform en">Remake</span>
+        <h4 class="gen-title">LANDNAX 202x</h4>
+        <p class="gen-desc">オリジナルのアイテム・オプション形式のレトロシューティングゲーム(リメイク)。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/-HKfh2Qt8r0?si=hopuoZFbSPtvhJyj" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <span class="caption">タイトル (2025年2月16時点)</span>
+        <details>
+          <summary>その他の動画</summary>
+          <div class="inner">
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/lmhKACx8fOo?si=Y_lfkamiRTxjnMf-" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <span class="caption">プレイ動画 (2025年2月16時点)</span>
+          </div>
+        </details>
+        <details>
+          <summary>掲載・出展履歴</summary>
+          <div class="inner">
+            2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) LANDNAX 202x 初出展<br>
+            2025年11月9日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10</a> (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
+          </div>
+        </details>
+      </div>
+
+      <!-- 1989 オリジナル -->
+      <div class="gen">
+        <span class="gen-year en">1989</span><span class="gen-platform en">PC-8001</span>
+        <h4 class="gen-title">LANDNAX <span style="font-weight:400; font-size:0.8em; color:var(--ink-soft);">— シリーズの原点</span></h4>
+        <p class="gen-desc">オリジナルのアイテム・オプション形式のレトロシューティングゲーム。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/IIro12bhd-s?si=-LDVQX-J-SR-DTuQ" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <details>
+          <summary>その他の動画</summary>
+          <div class="inner">
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/fJpI2ttEX8g?si=jKcF-BPC_gWm6PuQ&amp;start=2044" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <span class="caption">qbertgamesJPチャンネル で紹介していただきました。(34:04〜)</span>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/hawgBlmQ_kY?si=WdCgYTo-fU3blQJs" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <span class="caption">2024年3月30日のPC-8001mk2(レトロパソコン)の会のプレイ実況動画</span>
+          </div>
+        </details>
+        <details>
+          <summary>掲載・出展履歴</summary>
+          <div class="inner">
+            「月刊マイコン」掲載 , 電波新聞社 (1989年4月号)<br>
+            2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )<br>
+            2024年3月30日 80mk2会出展(クローズドイベント) - レトロゲームサミットで見つけてくださった @yoneさんによる出展 ( <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a> )<br>
+            2024年5月4日 東京ゲームダンジョン5 出展 (浜松町)<br>
+            2025年11月9日 東京ゲームダンジョン 10 出展 (浜松町) LANDNAX 1989 ＆ 202x ( <a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a> ) (<a href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a>)
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- TOUCH BREAKER シリーズ (1988-) -->
+    <article class="work" id="touchbreaker" style="--wc: var(--c-touch);">
+      <div class="work-head">
+        <h3 class="work-title">TOUCH BREAKER シリーズ<span class="work-range en">1988 — 2024</span></h3>
+        <p class="work-catch">「触って、離れて、壊す」。1988年のMSX用能力パズルを、システム復旧パズルとして現代にリメイク。</p>
+      </div>
+
+      <!-- 2024 Browser -->
+      <div class="gen">
+        <span class="gen-year en">2024</span><span class="gen-platform en">Browser</span>
+        <h4 class="gen-title">TOUCH BREAKER</h4>
+        <p class="gen-desc">バグに触って離れて駆除するシステム復旧パズル。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/y1i9YrjP3UA?si=YBj-A5bGL32cOKiE" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <a href="https://entaflip.com/touchbreaker2/" class="btn" target="_blank">Play (Browser)</a>
+        <details>
+          <summary>出展履歴</summary>
+          <div class="inner">
+            2024年8月21日 Tokyo Indies 出展<br>
+            2025年2月16日(日) <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
+          </div>
+        </details>
+      </div>
+
+      <!-- 1988 MSX -->
+      <div class="gen">
+        <span class="gen-year en">1988</span><span class="gen-platform en">MSX</span>
+        <h4 class="gen-title">TOUCH BREAKER <span style="font-weight:400; font-size:0.8em; color:var(--ink-soft);">— シリーズの原点</span></h4>
+        <p class="gen-desc">ブロックに触って離れて壊す能力パズル。ブラウザ上のMSXエミュレータで今すぐ遊べます。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/1d1J4zmNsGM?si=PXkd-N94_a3_LhMu" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <a href="https://webmsx.org/?MACHINE=MSX1J&amp;DISK=https://entaflip.com/msx/touchbreaker.dsk" class="btn" target="_blank">Play (PC)</a>
+        <a href="https://github.com/sonicdaw/touchbreaker" class="btn" target="_blank">GitHub</a>
+        <details>
+          <summary>掲載・出展履歴</summary>
+          <div class="inner">
+            「マイコンBASIC Magazine」掲載 , 電波新聞社 (1988年12月号)<br>
+            2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- ことばづけかるた (2021) -->
+    <article class="work" id="kotobaduke" style="--wc: var(--c-karuta);">
+      <div class="work-head">
+        <h3 class="work-title">ことばづけかるた<span class="work-range en">2021 —</span></h3>
+        <p class="work-catch">かるたのあとの「ことばづけ」。アナログかるたから、完全AI制作のデジタル版へ展開中。(登録商標)</p>
+      </div>
+      <div class="gen">
+        <span class="gen-year en">2021</span><span class="gen-platform">カードゲーム / デジタル版</span>
+        <h4 class="gen-title">ことばづけかるた</h4>
+        <p class="gen-desc">かるたのあとのことばづけ。</p>
+        <a href="https://entaflip.com/kotobadukekaruta/Kotobadukekaruta.pdf" class="btn" target="_blank">ルール説明 (PDF)</a>
+        <a href="https://entaflip.com/kotobadukekaruta/" class="btn" target="_blank">デジタル版プレイ</a>
+        <details>
+          <summary>商標登録・出展履歴</summary>
+          <div class="inner">
+            2021年10月07日 登録商標「ことばづけかるた」（商標登録第6453218号）<br>
+            2023年12月9日 ゲームマーケット2023秋 出展 ( <a href="https://note.com/sonicdaw/n/n3ae731cb6ef9" target="_blank">note</a> )<br>
+            2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
+            2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&amp;t=360s" target="_blank">YouTube Channel</a><br>
+            2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町) 完全 AI 制作のデジタルことばづけかるた 初出展
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- ================= 2010s ================= -->
+    <div class="era">
+      <span class="decade en">2010s</span>
+      <span class="label">ブラウザゲームの開拓</span>
+      <span class="rule"></span>
     </div>
- </div>
 
- <div class="game-section">
-   <p class="game-description">バグに触って離れて駆除するシステム復旧パズル</p>
-   <h3 class="game-title">TOUCH BREAKER<br>(2024年 Browser)</h3>
-   
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/y1i9YrjP3UA?si=YBj-A5bGL32cOKiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>
-   <a href="https://entaflip.com/touchbreaker2/" class="cool-link" target="_blank">Play(Browser)</a>
+    <!-- Elebeater (2014-) -->
+    <article class="work" id="elebeater" style="--wc: var(--c-elebeater);">
+      <div class="work-head">
+        <h3 class="work-title">Elebeater<span class="work-range en">2014 —</span></h3>
+        <p class="work-catch">エレベーターの気持ちになる頭脳アクションゲーム。TOKYO GAME SHOW 2022 Indie Game 出展作品。(登録商標)</p>
+      </div>
+      <div class="gen">
+        <span class="gen-year en">2014</span><span class="gen-platform en">Browser</span>
+        <h4 class="gen-title">Elebeater</h4>
+        <p class="gen-desc">エレベーターの気持ちになる頭脳アクションゲーム<br><span class="en">Be Elevator. Control the elevator chaos</span></p>
+        <a href="https://elebeater.net" class="btn" target="_blank">Play</a>
+        <a href="https://note.com/sonicdaw/m/m23c1ef33b421" class="btn" target="_blank">note</a>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/5ahmorvdtUo?si=gaJkQIYSHwgBSXZe" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <details>
+          <summary>その他の動画</summary>
+          <div class="inner">
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/i3T24womY1Q?si=6aIHb4oSE8mbXQQZ&amp;start=50" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="caption">講談社 Amazing Indie Games</span>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/1awaW6KAUwE?si=dwBqZIolBdLvIOEP&amp;start=5893" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <span class="caption">東京ゲームショウ2022 インディーゲーム 特別番組 (1:38:18〜)</span>
+          </div>
+        </details>
+        <details>
+          <summary>商標登録・出展履歴</summary>
+          <div class="inner">
+            2022年1月31日 登録商標「Ｅｌｅｂｅａｔｅｒ」（商標登録第6506550号）<br>
+            2022年9月15日〜9月18日 TOKYO GAME SHOW 2022 Indie Game 出展 ( <a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a> / <a href="https://youtu.be/1awaW6KAUwE?t=5893" target="_blank">IndieGameTokyo2022</a> )<br>
+            2024年5月4日 東京ゲームダンジョン5 出展<br>
+            2024年10月5日 品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展<br>
+            2024年11月16〜22日 ケーブルテレビ品川放送(品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&amp;t=360s" target="_blank">YouTube Channel</a><br>
+            2025年2月16日 <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
+          </div>
+        </details>
+      </div>
+    </article>
 
-   <button class="collapsible">出展履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       2024年8月21日 Tokyo Indies 出展<br>
-       2025年2月16日(日) <a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7</a> (浜松町)
-     </div>
-   </div>
+    <!-- ================= 1980s ================= -->
+    <div class="era">
+      <span class="decade en">1980s</span>
+      <span class="label">原点 — レトロPC時代 (PC-8001 / MSX)</span>
+      <span class="rule"></span>
+    </div>
 
-   <p class="game-description" style="margin-top: 30px;">ブロックに触って離れて壊す能力パズル</p>
-   <h3 class="game-title">TOUCH BREAKER<br>(1988年 MSX)</h3>
-   
-   <div class="media-section">
-     <iframe src="https://www.youtube.com/embed/1d1J4zmNsGM?si=PXkd-N94_a3_LhMu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>
-   <a href="https://webmsx.org/?MACHINE=MSX1J&DISK=https://entaflip.com/msx/touchbreaker.dsk" class="cool-link" target="_blank">Play(PC)</a>
-   <a href="https://github.com/sonicdaw/touchbreaker" class="cool-link" target="_blank">GitHub</a>
+    <p class="origin-note">この年代に生まれ、現代のシリーズへ続いている作品:</p>
+    <div class="origin-links" style="margin-bottom: 22px;">
+      <a href="#mirror">MIRROR MAN (1987 / PC-8001) → MIRROR シリーズ</a>
+      <a href="#touchbreaker">TOUCH BREAKER (1988 / MSX) → TOUCH BREAKER シリーズ</a>
+      <a href="#landnax">LANDNAX (1989 / PC-8001) → LANDNAX シリーズ</a>
+    </div>
 
-   <button class="collapsible">掲載・出展履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       「マイコンBASIC Magazine」掲載 , 電波新聞社 (1988年12月号)<br>
-       2023年11月23日 RETRO GAME SUMMIT 出展 ( <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a> )
-     </div>
-   </div>
- </div>
- <div class="game-section">
-   <p class="game-description">30分間の箱庭冒険RPG</p>
-   <h3 class="game-title">MID MASTER<br>(1989年 MSX)</h3>
-
-   <a href="https://webmsx.org/?MACHINE=MSX2J&DISK=https://entaflip.com/msx/midmaster.dsk" class="cool-link" target="_blank">Play(PC)</a>
-
-   <button class="collapsible">掲載履歴</button>
-   <div class="collapse-content">
-     <div class="collapse-content-inner">
-       「マイコンBASIC Magazine」掲載 , 電波新聞社 (1989年1月号)<br>
-       2026年6月10日 <a href="https://retropcnews.com/archives/5704" target="_blank">Retropcnews</a>
-     </div>
-   </div>
-
- </div>
+    <!-- MID MASTER (1989) -->
+    <article class="work" id="midmaster" style="--wc: var(--c-midmaster);">
+      <div class="work-head">
+        <h3 class="work-title">MID MASTER<span class="work-range en">1989</span></h3>
+        <p class="work-catch">30分間の箱庭冒険RPG。ブラウザ上のMSXエミュレータで今すぐ遊べます。</p>
+      </div>
+      <div class="gen">
+        <span class="gen-year en">1989</span><span class="gen-platform en">MSX</span>
+        <h4 class="gen-title">MID MASTER</h4>
+        <p class="gen-desc">30分間の箱庭冒険RPG。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/JiBUWqTKk1w?si=sxq6V9Y7KK5kQgg7" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <a href="https://webmsx.org/?MACHINE=MSX2J&amp;DISK=https://entaflip.com/msx/midmaster.dsk" class="btn" target="_blank">Play (PC)</a>
+        <details>
+          <summary>掲載履歴</summary>
+          <div class="inner">
+            「マイコンBASIC Magazine」掲載 , 電波新聞社 (1989年1月号)<br>
+            2026年6月10日 <a href="https://retropcnews.com/archives/5704" target="_blank">Retropcnews</a>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section id="music">
- <h2>MUSIC</h2>
- <h3>Another Chopin Etude OP.10 No.1<br>(2022年)</h3>
- もしショパンがサブスク世代だったら<br><br>
- <iframe src="https://www.youtube.com/embed/d4RmHBbeLUA?si=78NTdlGi51IOSaTD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="en">MUSIC</h2><span class="jp">音楽</span><span class="sec-bar"></span>
+    </div>
+    <article class="work" style="--wc: var(--c-music);">
+      <div class="work-head">
+        <h3 class="work-title">Another Chopin Etude OP.10 No.1<span class="work-range en">2022</span></h3>
+        <p class="work-catch">もしショパンがサブスク世代だったら</p>
+      </div>
+      <div class="video" style="margin-top: 14px;">
+        <iframe src="https://www.youtube.com/embed/d4RmHBbeLUA?si=78NTdlGi51IOSaTD" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </article>
+  </div>
 </section>
 
-<section id="manga-anime">
- <h2>COMIC/ANIMATION</h2>
+<section id="comic">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="en">COMIC / ANIMATION</h2><span class="jp">漫画・アニメ</span><span class="sec-bar"></span>
+    </div>
+    <article class="work" style="--wc: var(--c-comic);">
+      <div class="work-head">
+        <h3 class="work-title">「ひーこらひーこらばひんばひん」</h3>
+        <p class="work-catch">小学生時代に発案したことばが、漫画・アニメ「おぼっちゃまくん」の「茶魔語」に。</p>
+      </div>
+      <p style="font-size: 0.95em;">
+        小学生の時に発案。弟が絵を添えて漫画「おぼっちゃまくん」に応募し「茶魔語」に。<br>
+        Gray、氣志團メンバーにもツイート内で使われたことあり。<br>
+        現在もX(Twitter)内でも使用されている。
+      </p>
+      <a href="https://www.amazon.co.jp/gp/video/detail/B00JX4UYOG/ref=atv_dp_share_cu_r" class="btn" target="_blank">「おぼっちゃまくん」(Amazon prime video)</a>
+      <p style="font-size: 0.9em; color: var(--ink-soft); margin-bottom: 4px;">
+        ・第41, 42話「若ちゃまくん！江戸時代でヒーコラバヒン」<br>
+        ・第61話「がめついなはうれついな」
+      </p>
+    </article>
+  </div>
+</section>
 
- <h3>「ひーこらひーこらばひんばひん」</h3>
- 小学生の時に発案。弟が絵を添えて漫画「おぼっちゃまくん」に応募し「茶魔語」に。<br>
- Gray、氣志團メンバーにもツイート内で使われたことあり。<br>
- 現在もX(Twitter)内でも使用されている。<br><br>
- <br> 「<a href="https://www.amazon.co.jp/gp/video/detail/B00JX4UYOG/ref=atv_dp_share_cu_r" target="_blank">おぼっちゃまくん</a>」(Amazon prime video)<br>
- ・第41, 42話「若ちゃまくん！江戸時代でヒーコラバヒン」<br>
- ・第61話「がめついなはうれついな」
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="en">ABOUT</h2><span class="jp">ENTAFLIP について</span><span class="sec-bar"></span>
+    </div>
+    <div class="about-card">
+      <div class="role en">ENTAFLIP / WEEKEND GAME DESIGNER</div>
+      <p class="en" style="margin: 0 0 4px;">Masahide Sumiyoshi</p>
+      <p>
+        ENTAFLIP（エンタフリップ）は「新しいエンタの種」を創造するクリエイティブ活動です。
+        1980年代のレトロPC(PC-8001 / MSX)での作品づくりを原点に、現在は現実空間で身体を使って遊ぶ
+        デジタル遊具やブラウザゲーム、音楽まで、ジャンルを横断してエンタテインメントを制作しています。
+      </p>
+      <ul class="about-facts">
+        <li>制作活動 1987年〜 (PC-8001 / MSX 時代からの雑誌掲載歴)</li>
+        <li>TOKYO GAME SHOW 2022 Indie Game 出展 (Elebeater)</li>
+        <li>TOKYO GAME SHOW 2024 Selected Indie 80 出展 (Mirror Of Terror)</li>
+        <li>登録商標「Elebeater」「ことばづけかるた」</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
- <h2>Contact</h2>
- お問い合わせ<br>
- <a href="https://forms.gle/4Ssz2SVV8GXCitFw7" class="cool-link" target="_blank">Form</a>
+  <div class="wrap" style="text-align: center;">
+    <div class="sec-head">
+      <h2 class="en">CONTACT</h2><span class="jp">お問い合わせ</span><span class="sec-bar"></span>
+    </div>
+    <p>出展・コラボレーション・取材などのお問い合わせはこちらから。</p>
+    <a href="https://forms.gle/4Ssz2SVV8GXCitFw7" class="btn" style="font-size: 1em; padding: 12px 34px;" target="_blank">お問い合わせフォーム</a>
+  </div>
 </section>
 
 <footer>
- <p>Copyright (C) 2024, 2025 Entaflip.com. All Rights Reserved.</p>
+  <p style="margin: 0;">Copyright (C) 2024-2026 Entaflip.com. All Rights Reserved.</p>
 </footer>
-
-<script>
-// 折りたたみ機能のJavaScript
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-</script>
 
 </body>
 </html>
