@@ -176,6 +176,21 @@ section { padding: 48px 0; }
 }
 .wn-x:hover { background: var(--accent); }
 
+/* ---------- メディア掲載(コンパクト) ---------- */
+.media-strip { margin: 0 0 40px; }
+.media-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.84em; }
+.media-list li { display: flex; align-items: baseline; gap: 8px; color: var(--ink-soft); }
+.media-year { font-family: "Outfit", sans-serif; color: var(--accent); font-weight: 700; }
+.media-work { color: var(--ink); font-weight: 500; }
+.media-list a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+.media-list a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* What's New の過去分(折りたたみ) */
+.wn-more { margin-top: 10px; background: transparent; border: none; font-size: 1em; }
+.wn-more > summary { padding: 8px 4px; font-size: 0.86em; color: var(--ink-soft); font-weight: 500; }
+.wn-more > summary::after { color: var(--accent); }
+.wn-more .wn-list { margin-top: 4px; }
+
 /* ---------- 年代の章見出し ---------- */
 .era {
   display: flex;
@@ -407,6 +422,17 @@ footer {
 
 <section id="news">
   <div class="wrap">
+    <div class="media-strip">
+      <div class="sec-head">
+        <h2 class="en">MEDIA</h2><span class="jp">メディア掲載</span><span class="sec-bar"></span>
+      </div>
+      <ul class="media-list">
+        <li><span class="media-year">2025</span><span><span class="media-work">「LANDNAX 1989 ＆ 202x」</span> 東京ゲームダンジョン (<a href="https://www.4gamer.net/games/991/G999110/20251120047/" target="_blank">4Gamer</a>)</span></li>
+        <li><span class="media-year">2024</span><span><span class="media-work">「Mirror Of Terror」</span> 東京ゲームショウ2024 Selected Indie 80 (<a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">4Gamer</a>)</span></li>
+        <li><span class="media-year">2022</span><span><span class="media-work">「エレベーターの気持ちになるゲーム」</span> 東京ゲームショウ インディーゲーム選考出展 (<a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a>)</span></li>
+      </ul>
+    </div>
+
     <div class="sec-head">
       <h2 class="en">WHAT'S NEW</h2><span class="jp">最新情報</span><span class="sec-bar"></span>
     </div>
@@ -444,40 +470,106 @@ footer {
         <a class="wn-x" href="https://x.com/OVERSE_JP/status/2009504702522892524" target="_blank">X</a>
         <a class="wn-x" href="https://x.com/sonicdaw/status/2009221633530278128" target="_blank">X</a></span>
       </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年11月26日〜28日</span>
-        <span class="wn-title"><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a>
-        <a class="wn-x" href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>
-        <a class="wn-x" href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a></span>
-      </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年11月9日</span>
-        <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a>
-        <a class="wn-x" href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a></span>
-      </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年8月30日</span>
-        <span class="wn-title"><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">ものづくりと最新技術体験ワークショップ in もてぎ</a>
-        <a class="wn-x" href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a></span>
-      </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年7月30日〜8月1日</span>
-        <span class="wn-title">SPORTEC 2025 (ビッグサイト東棟)
-        <a class="wn-x" href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a></span>
-        <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
-      </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年7月18日〜20日</span>
-        <span class="wn-title"><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a>
-        <a class="wn-x" href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a></span>
-      </li>
-      <li class="wn-item">
-        <span class="wn-date">2025年5月29日</span>
-        <span class="wn-title"><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a>
-        <a class="wn-x" href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a></span>
-        <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
-      </li>
     </ul>
+
+    <details class="wn-more">
+      <summary>過去の出展・掲載履歴 (2025年以前)</summary>
+      <ul class="wn-list">
+        <li class="wn-item">
+          <span class="wn-date">2025年11月26日〜28日</span>
+          <span class="wn-title"><a href="https://www.sangyo-koryuten.tokyo/" target="_blank">産業交流展 (ビッグサイト西棟)</a>
+          <a class="wn-x" href="https://x.com/sonicdaw/status/1999603171099050383" target="_blank">X</a>
+          <a class="wn-x" href="https://x.com/sangyo_koryuten/status/1993594433489846464" target="_blank">X</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年11月9日</span>
+          <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 10 (浜松町)</a>
+          <a class="wn-x" href="https://x.com/takahashi_write/status/1991690216814571948" target="_blank">X</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年8月30日</span>
+          <span class="wn-title"><a href="https://sites.google.com/komori-lab.com/motezukuri1" target="_blank">ものづくりと最新技術体験ワークショップ in もてぎ</a>
+          <a class="wn-x" href="https://x.com/sonicdaw/status/1961905762298740779" target="_blank">X</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年7月30日〜8月1日</span>
+          <span class="wn-title">SPORTEC 2025 (ビッグサイト東棟)
+          <a class="wn-x" href="https://x.com/sonicdaw/status/1949409384859332657" target="_blank">X</a></span>
+          <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年7月18日〜20日</span>
+          <span class="wn-title"><a href="https://bitsummit.org/" target="_blank">BitSummit (京都みやこめっせ)</a>
+          <a class="wn-x" href="https://x.com/sonicdaw/status/1946929437615775751" target="_blank">X</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年5月29日</span>
+          <span class="wn-title"><a href="https://sh-oneday.com/" target="_blank">スポーツヘルスケアoneデイ2025 (六本木)</a>
+          <a class="wn-x" href="https://x.com/sonicdaw/status/1928599448302624817" target="_blank">X</a></span>
+          <span class="wn-note">株式会社YAK-OH様ブースにてSOLAR POLEシンクロモード出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2025年2月16日</span>
+          <span class="wn-title"><a href="https://tokyogamedungeon.com/" target="_blank">東京ゲームダンジョン 7 (浜松町)</a></span>
+        </li>
+          </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年11月16日〜22日</span>
+          <span class="wn-title">ケーブルテレビ品川放送 (品川区イベント紹介) <a href="https://youtu.be/_BpG9OzGOEE?si=3z9fJ2n8_Yj7xIP7&amp;t=360s" target="_blank">YouTube Channel</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年11月16日〜17日</span>
+          <span class="wn-title"><a href="https://gamemarket.jp/" target="_blank">ゲームマーケット 2024秋</a> (幕張メッセ ホール7)</span>
+          <span class="wn-note"><a href="https://makectrl.jp/" target="_blank">make.ctrl.japan11</a> 出展エリアにて Mirror Of Terror 出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年10月5日</span>
+          <span class="wn-title">品川区イベント <a href="https://sja.m-musubi.or.jp/team/" target="_blank">Smile Job Adventure</a> 出展</span>
+          <span class="wn-note">ことばづけかるた / Elebeater</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年9月26日〜29日</span>
+          <span class="wn-title"><a href="https://tgs.nikkeibp.co.jp/tgs/2024/jp/program/indie/indie80/communication.html" target="_blank">TOKYO GAME SHOW 2024 Selected Indie 80 出展</a></span>
+          <span class="wn-note">Mirror Of Terror (<a href="https://www.4gamer.net/games/842/G084230/20240929022/" target="_blank">4Gamer にプレイレポート掲載</a>)</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年8月21日</span>
+          <span class="wn-title">Tokyo Indies 出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年5月4日</span>
+          <span class="wn-title">東京ゲームダンジョン 5 (浜松町)</span>
+          <span class="wn-note">LANDNAX 1989 / Elebeater 出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2024年3月30日</span>
+          <span class="wn-title">80mk2会 出展 (クローズドイベント) <a href="https://note.com/sonicdaw/n/n3b4d85bad2b5" target="_blank">note</a></span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2023年12月9日</span>
+          <span class="wn-title">ゲームマーケット 2023秋 出展 <a href="https://note.com/sonicdaw/n/n3ae731cb6ef9" target="_blank">note</a></span>
+          <span class="wn-note">ことばづけかるた</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2023年11月23日</span>
+          <span class="wn-title">RETRO GAME SUMMIT 出展 <a href="https://note.com/sonicdaw/n/n70214ef750a1" target="_blank">note</a></span>
+          <span class="wn-note">PC-8001 時代の作品を出展</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2022年9月15日〜18日</span>
+          <span class="wn-title">TOKYO GAME SHOW 2022 Indie Game 選考出展</span>
+          <span class="wn-note">エレベーターの気持ちになるゲーム Elebeater (<a href="https://www.famitsu.com/news/202209/16276355.html" target="_blank">ファミ通</a> / <a href="https://youtu.be/1awaW6KAUwE?t=5893" target="_blank">IndieGameTokyo2022</a>)</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2022年1月31日</span>
+          <span class="wn-title">登録商標「Ｅｌｅｂｅａｔｅｒ」(商標登録第6506550号)</span>
+        </li>
+        <li class="wn-item">
+          <span class="wn-date">2021年10月7日</span>
+          <span class="wn-title">登録商標「ことばづけかるた」(商標登録第6453218号)</span>
+        </li>
+      </ul>
+    </details>
   </div>
 </section>
 
