@@ -32,7 +32,13 @@
   --c-comic: #d63384;     /* COMIC: ポップなピンク */
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* iOS Safari の自動文字拡大(font boosting)を無効化。
+     ブロックごとに倍率が変わり、行によって文字サイズが違って見えるのを防ぐ */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   margin: 0;
   font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
@@ -178,9 +184,9 @@ section { padding: 48px 0; }
 
 /* ---------- メディア掲載(コンパクト) ---------- */
 .media-strip { margin: 0 0 40px; }
-.media-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.84em; }
+.media-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95em; }
 .media-list li { display: flex; align-items: baseline; gap: 8px; color: var(--ink-soft); }
-.media-year { font-family: "Outfit", sans-serif; color: var(--accent); font-weight: 700; }
+.media-year { color: var(--accent); font-weight: 700; }
 .media-work { color: var(--ink); font-weight: 500; }
 .media-list a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
 .media-list a:hover { color: var(--accent); border-bottom-color: var(--accent); }
@@ -377,19 +383,28 @@ footer {
   margin-top: 40px;
 }
 
+/* タッチ端末で「デスクトップ用Webサイトを表示」にしている場合。
+   仮想980px幅が実画面幅に縮小されるため文字が小さくなる。
+   一律の倍率で拡大する(ブロックごとに倍率が変わる自動拡大とは違い、サイズは揃ったまま) */
+@media (hover: none) and (pointer: coarse) and (min-width: 641px) {
+  html { -webkit-text-size-adjust: 140%; text-size-adjust: 140%; }
+}
+
 @media screen and (max-width: 640px) {
-  body { font-size: 15px; }
+  body { font-size: 16px; }
   .hero { padding: 40px 16px 32px; }
   .hero-lead { font-size: 1.1em; }
   .work { padding: 20px 16px 16px; }
   .gen { padding-left: 20px; }
-  .wn-item { grid-template-columns: 1fr; padding: 12px 14px; font-size: 1em; }
-  .wn-date { grid-row: 1; font-size: 0.95em; }
+  .wn-item { grid-template-columns: 1fr; padding: 14px 14px; font-size: 1em; }
+  .wn-date { grid-row: 1; font-size: 1em; }
   .wn-title { grid-row: 2; grid-column: 1; }
-  .wn-note { grid-row: 3; grid-column: 1; font-size: 0.92em; }
-  .wn-more > summary { font-size: 0.95em; }
-  .media-list { font-size: 0.95em; gap: 14px; }
+  .wn-note { grid-row: 3; grid-column: 1; font-size: 0.95em; }
+  .wn-more > summary { font-size: 1em; padding: 12px 4px; }
+  .media-strip .sec-head { margin-bottom: 18px; }
+  .media-list { font-size: 1em; gap: 16px; }
   .media-list li { flex-direction: column; gap: 2px; }
+  .media-list a { word-break: break-all; }
   .era .decade { font-size: 1.8em; }
   .sec-head h2 { font-size: 1.5em; }
 }
